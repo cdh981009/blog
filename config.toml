@@ -1,26 +1,29 @@
 baseURL = "http://example.org/"
 languageCode = "kr"
-title = "CryptMade"
 theme = "nakedMan"
+title = "CryptMade"
 
 # todo: add google analytics
 # googleAnalytics = ""
 
 [params]
-    description = "My site description"
+  description = "My site description"
+
+[params]
+  author = "조대호"
+
+[[menu.main]] 
+  name = "About"
+  url = "/about"
 
 [[menu.main]]
-    name = "About"
-    url = "/about"
-
-[[menu.main]]
-    name = "Blog"
-    url = "/blog"
+  name = "Blog"
+  url = "/blog"
 
 [[menu.social]]
-    name = "GitHub"
-    url = "https://github.com/cdh981009"
-    pre = "<i class='fab fa-github'></i>"
+  name = "GitHub"
+  pre = "<i class='fab fa-github'></i>"
+  url = "https://github.com/cdh981009"
 
 [[menu.footer]]
   name = "About"
