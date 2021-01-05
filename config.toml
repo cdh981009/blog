@@ -21,3 +21,11 @@ theme = "nakedMan"
     name = "GitHub"
     url = "https://github.com/cdh981009"
     pre = "<i class='fab fa-github'></i>"
+
+[[menu.footer]]
+  name = "About"
+  url = "/about"
+
+[[menu.footer]]
+  name = "Privacy"
+  url = "/privacy"
