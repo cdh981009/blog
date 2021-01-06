@@ -8,8 +8,6 @@ title = "CryptMade"
 
 [params]
   description = "My site description"
-
-[params]
   author = "조대호"
 
 [[menu.main]] 
