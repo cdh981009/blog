@@ -6,6 +6,9 @@ title = "CryptMade"
 # todo: add google analytics
 # googleAnalytics = ""
 
+[markup.goldmark.renderer]
+  unsafe= true
+
 [params]
   description = "My site description"
   author = "조대호"
