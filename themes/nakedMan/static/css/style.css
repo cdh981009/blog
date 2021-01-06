@@ -16,3 +16,7 @@ main {
 .max-800px {
     max-width: 800px;
 }
+
+.title-image {
+    padding-bottom: 2em;
+}
