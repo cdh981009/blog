@@ -11,6 +11,10 @@ tags:
 draft: true
 ---
 
+This is a short summary of the post
+
+<!--more-->
+
 # H1 level title
 
 This is a paragraph.
