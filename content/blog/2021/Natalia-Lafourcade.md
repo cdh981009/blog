@@ -1,22 +1,29 @@
 ---
-title: "This Post is Full of Loren Ipsum"
-date: 2021-01-05T20:48:31+09:00
-description: "This is a short description of the page"
+title: "Natalia Lafourcade"
+date: 2021-01-06T20:16:51+09:00
+description: "This is a page about Natalia Lafourcade"
 images:
     - /images/blog/2019/03/fields.jpg
 categories:
     - Etc
     - Blogging
-    - Algorithm (PS)
+    - Music
 draft: true
 ---
 
-Lorem ipsum dolor sit amet, consectetur...
+## Tú sí sabes quereme
+Tu si sabes adorarme, no te vayas, quedate por siempre, para siempre,
 
-## What is Lorem Ipsum?
-In mollis cursus ligula, et venenatis neque maximus ut...
+``` Natalia.cpp
+#include <iostream>
 
-Vivamus ut tincidunt urna. Nam eu mollis dolor...
+using namespace std;
+
+int main() {
+    cout << "Natalia는 최고얌" << endl;
+    return 0;
+}
+```
 
 ## In mollis cursus ligula
 Etiam et ligula sit amet urna aliquam suscipit...
