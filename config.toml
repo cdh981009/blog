@@ -2,6 +2,7 @@ baseURL = "http://example.org/"
 languageCode = "kr"
 theme = "nakedMan"
 title = "CryptMade"
+paginate = 2
 
 # todo: add google analytics
 # googleAnalytics = ""
