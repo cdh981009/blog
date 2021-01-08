@@ -22,6 +22,10 @@ paginate = 8
   name = "Blog"
   url = "/blog"
 
+[[menu.main]]
+  name = "Categories"
+  url = "/categories"
+
 [[menu.social]]
   name = "GitHub"
   pre = "<i class='fab fa-github'></i>"
@@ -34,3 +38,16 @@ paginate = 8
 [[menu.footer]]
   name = "Privacy"
   url = "/privacy"
+
+[related]
+  threshold = 0 
+  includeNewer = true
+  toLower = false
+
+  [[related.indices]]
+      name = "categories"
+      weight = 100
+
+  [[related.indices]]
+      name = "date"
+      weight = 10
