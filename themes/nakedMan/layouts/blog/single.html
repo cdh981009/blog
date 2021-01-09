@@ -59,6 +59,7 @@
         </div>
     </div>
 </section>
+{{ if not (in (string .Site.BaseURL) "localhost") }}
 <section class="section">
     <div class="columns is-centered">
         <div class="column max-800px">
@@ -68,6 +69,7 @@
         </div>
     </div>
 </section>
+{{ end }}
 <section class="section">
     <div class="columns is-centered">
         <div class="column max-800px">
