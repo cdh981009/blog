@@ -4,6 +4,9 @@ theme = "nakedMan"
 title = "CryptMade"
 paginate = 8
 
+hasCJKLanguage = true
+summaryLength = 30
+
 # todo: add google analytics
 # googleAnalytics = ""
 
@@ -13,6 +16,7 @@ paginate = 8
 [params]
   description = "My site description"
   author = "조대호"
+  mainSections = ["blog"]
 
 [[menu.main]] 
   name = "About"
