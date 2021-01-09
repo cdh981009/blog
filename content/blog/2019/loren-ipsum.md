@@ -8,7 +8,6 @@ categories:
     - Etc
     - Blogging
     - Algorithm (PS)
-draft: true
 ---
 
 Lorem ipsum dolor sit amet, consectetur...
