@@ -30,6 +30,29 @@ main {
     padding: 0.1em;
 }
 
+.post-card {
+    height: 100%;
+}
+
 .card {
     height: 100%;
+}
+
+.post-card .card {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card .card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card .card .card-content .content {
+    flex-grow: 1;
+}
+
+.post-card .card .card-content .tags {
+    align-self: flex-end;
 }
