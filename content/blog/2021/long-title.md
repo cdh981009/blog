@@ -1,12 +1,11 @@
 ---
-title: "Post with a very very veyr very very Long Title"
+title: "Heavy-light decomposition"
 date: 2021-01-08T23:08:52+09:00
 description: "Short description"
 images:
-    - /images/blog/2021/01/fields.jpg
+    - /images/blog/2019/03/fields.jpg
 categories:
     - Etc
-draft: true
 ---
 
 This is a short summary of the post
