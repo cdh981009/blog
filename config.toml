@@ -1,6 +1,6 @@
 baseURL = "https://cdh981009.github.io/"
 languageCode = "kr"
-theme = "nakedMan"
+theme = "naked-man"
 title = "CryptMade"
 paginate = 8
 
