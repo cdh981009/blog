@@ -5,9 +5,9 @@
             <h1>{{ .Title }}</h1>
             {{ .Content }}
         </div>
-        <div class="columns is-multiline">
+        <div class="columns is-multiline is-centered">
             {{ range .Paginator.Pages }}
-            <div class="column is-half">
+            <div class="column is-full max-800px">
                 {{ partial "widgets/post-card.html" . }}
             </div>
             {{ end }}
