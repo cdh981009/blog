@@ -1,9 +1,9 @@
 baseURL = "https://cdh981009.github.io/"
-languageCode = "kr"
 theme = "naked-man"
-title = "CryptMade"
+title = "Cho's Crypt"
 paginate = 8
 
+languageCode = "kr"
 hasCJKLanguage = true
 summaryLength = 30
 
@@ -11,10 +11,10 @@ summaryLength = 30
 # googleAnalytics = ""
 
 [markup.goldmark.renderer]
-  unsafe= true
+  unsafe = true
 
 [params]
-  description = "My site description"
+  description = "a blog of Daeho Cho"
   author = "조대호"
   mainSections = ["blog"]
 
@@ -29,6 +29,10 @@ summaryLength = 30
 [[menu.main]]
   name = "Categories"
   url = "/categories"
+  
+[[menu.main]]
+  name = "Tags"
+  url = "/tags"
 
 [[menu.social]]
   name = "GitHub"
