@@ -2,8 +2,13 @@
     <div class="container is-centered">
         <div class="columns is-centered has-text-centered">
             <div class="column is-narrow">
+                {{ $startYear:= .Site.Params.StartYear }}
                 {{ with .Site.Copyright }}
-                    {{ replace . "{year}" now.Year | markdownify }}
+                    {{ if eq now.Year $startYear }}
+                        {{ replace . "{year}" now.Year | markdownify }}
+                    {{ else }}
+                        {{ replace . "{year}" (print $startYear "-" now.Year) | markdownify }}
+                    {{ end }}
                 {{ end }}
                 </br>
                 Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>

@@ -19,6 +19,7 @@ copyright = "&copy;{year} [cdh981009](https://cdh981009.github.io/), All Rights 
   description = "a blog of Daeho Cho"
   author = "조대호"
   mainSections = ["blog"]
+  startYear = 2021
 
 [[menu.main]] 
   name = "About"
