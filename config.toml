@@ -1,11 +1,13 @@
 baseURL = "https://cdh981009.github.io/"
 theme = "naked-man"
-title = "Cho's Crypt"
+title = "Crypt"
 paginate = 8
 
 languageCode = "kr"
 hasCJKLanguage = true
 summaryLength = 30
+
+copyright = "&copy;{year} [cdh981009](https://cdh981009.github.io/), All Rights Reserved"
 
 # todo: add google analytics
 # googleAnalytics = ""
@@ -39,13 +41,9 @@ summaryLength = 30
   pre = "<i class='fab fa-github'></i>"
   url = "https://github.com/cdh981009"
 
-[[menu.footer]]
-  name = "About"
-  url = "/about"
-
-[[menu.footer]]
-  name = "Privacy"
-  url = "/privacy"
+# [[menu.footer]]
+#   name = "About"
+#   url = "/about"
 
 [related]
   threshold = 0 
