@@ -1,7 +1,7 @@
 baseURL = "https://cdh981009.github.io/"
 theme = "naked-man"
 title = "Crypt"
-paginate = 2
+paginate = 6
 
 languageCode = "kr"
 hasCJKLanguage = true
