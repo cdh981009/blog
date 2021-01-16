@@ -8,6 +8,7 @@ categories:
     - Algorithm(PS)
 tags:
     - Pain
+showimage: false
 ---
 
 알고리즘을 왜 하는지에 대한 고찰이다.
