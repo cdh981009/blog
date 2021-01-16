@@ -11,7 +11,7 @@
         {{ end }}
         <div class="columns is-multiline is-centered">
             {{ range .Paginator.Pages }}
-            <div class="column is-full max-800px">
+            <div class="column is-full max-800px p-4">
                 {{ partial "widgets/post-card.html" . }}
             </div>
             {{ end }}
