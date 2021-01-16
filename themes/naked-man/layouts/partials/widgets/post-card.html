@@ -1,5 +1,5 @@
 {{ $permalink := .Permalink }}
-<div class="card">
+<div class="card mx-0 my-3">
     {{ with .Params.Images }}
         <div class="card-image">
             <a href="{{ $permalink }}">
@@ -15,9 +15,9 @@
                 {{ .Title }}
             </div>
         </a>
-        <span class="heading mb-4">
-            <time>{{ .PublishDate.Format "2006/01/02"}}</time>
-        </span>
+            <span class="heading mb-4">
+                <time>{{ .PublishDate.Format "2006/01/02"}}</time>
+            </span>
         <div class="content">
             {{ .Summary }}
         </div>
