@@ -5,8 +5,7 @@ description: "Algorithm problem solving is the most painful thing in the world"
 images:
     - /images/blog/2021/01/pain.jpg
 categories:
-    - Etc
-    - Algorithm (PS)
+    - Algorithm(PS)
 tags:
     - Pain
 ---

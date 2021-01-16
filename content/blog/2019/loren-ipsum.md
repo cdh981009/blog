@@ -5,9 +5,7 @@ description: "This is a short description of the page"
 images:
     - /images/blog/2019/03/fields.jpg
 categories:
-    - Etc
     - Blogging
-    - Algorithm (PS)
 ---
 
 Lorem ipsum dolor sit amet, consectetur...

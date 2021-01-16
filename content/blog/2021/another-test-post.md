@@ -4,8 +4,8 @@ date: 2021-01-06T20:16:51+09:00
 description: "테스트 포스트 입니다"
 categories:
     - Etc
-    - Blogging
-    - Music
+tags:
+    - NataliaLafourcade
 ---
 
 호롤롤롤로. 이기면 승리 지면 패배. 가나다라마바사아자차카타파하.
