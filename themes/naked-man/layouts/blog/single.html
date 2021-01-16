@@ -3,8 +3,8 @@
     <article>
         <div class="columns is-centered">
             <div class="column max-800px">
-                <h1 class="title is-1">{{ .Title }}</h1>
-                <div class="title subtitle heading is-6">
+                <h1 class="title">{{ .Title }}</h1>
+                <div class="subtitle is-6">
                     <div class="columns is-vcentered">
                         <div class="column">
                             <div class="columns is-vcentered is-mobile">
@@ -14,13 +14,11 @@
                                 </div>
                                 {{ end }} -->
                                 <div class="column">
-                                    <p>{{ .Site.Params.Author }}</p>
-                                    <p><time>{{ .PublishDate.Format "January 2, 2006" }}</time> |
-                                        {{ .ReadingTime }} {{ if eq .ReadingTime 1 }} minute {{ else }} minutes {{ end }}</p>
+                                    <p><time>{{ .PublishDate.Format "2006/01/02" }}</time> ・</p>
                                 </div>
                                 <div class="column">
                                     {{ range $idx, $category := .Params.categories }}
-                                    {{- if ne $idx 0 }}, {{ end }}<a href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
+                                    {{- if ne $idx 0 }} {{ end }}<a href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ (print "#" $category) }}</a>
                                     {{- end }}
                                 </div>
                             </div>
@@ -45,14 +43,14 @@
             <div class="columns is-mobile">
                 <div class="column has-text-left">
                     {{ with .PrevInSection }}
-                    <p>Previous post</p>
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    <p class="has-text-weight-semibold">Previous post</p>
+                    <a class="is-size-5" href="{{ .Permalink }}">{{ .Title }}</a>
                     {{ end }}
                 </div>
                 <div class="column has-text-right">
                     {{ with .NextInSection }}
-                    <p>Next post</p>
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    <p class="has-text-weight-semibold">Next post</p>
+                    <a class="is-size-5" href="{{ .Permalink }}">{{ .Title }}</a>
                     {{ end }}
                 </div>
             </div>
@@ -79,8 +77,8 @@
             <div class="columns is-multiline">
                 {{ $related := (where (.Site.RegularPages.Related .) "Type" "blog") | first 3 }}
                 {{ range $related }}
-                <div class="column is-full">
-                    {{ partial "widgets/post-card-small.html" . }}
+                <div class="column is-full py-2">
+                    <a class="is-size-5" href="{{ .Permalink }}">{{ .Title }}</a>
                 </div>
                 {{ end }}
             </div>
