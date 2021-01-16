@@ -1,0 +1,35 @@
+$primary: #1a535c;
+
+@import "bulma/bulma.sass";
+
+.logo h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5em;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.max-800px {
+    max-width: 800px;
+}
+
+.title-image {
+    padding-bottom: 2em;
+}
+
+.single-title {
+    padding-bottom: 1.5em;
+}
+
+.narrow-background {
+    display: table;
+    padding: 0.1em;
+}
