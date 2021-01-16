@@ -2,3 +2,6 @@
 	path = public
 	url = https://github.com/cdh981009/cdh981009.github.io
 	branch = master
+[submodule "themes/naked-man/assets/bulma"]
+	path = themes/naked-man/assets/bulma
+	url = https://github.com/jgthms/bulma.git
