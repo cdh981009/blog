@@ -3,38 +3,37 @@
     <article>
         <div class="columns is-centered">
             <div class="column max-800px">
-                <h1 class="title">{{ .Title }}</h1>
-                <div class="subtitle is-6">
-                    <div class="columns is-vcentered">
-                        <div class="column">
-                            <div class="columns is-vcentered is-mobile">
-                                <!-- {{ with .Site.Params.authorImage }}
-                                <div class="column is-narrow">
-                                    <img src="{{ . }}" class="author-image">
-                                </div>
-                                {{ end }} -->
-                                <div class="column">
-                                    <p><time>{{ .PublishDate.Format "2006/01/02" }}</time> ・</p>
-                                </div>
-                                <div class="column">
-                                    {{ range $idx, $category := .Params.categories }}
-                                    {{- if ne $idx 0 }} {{ end }}<a href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ (print "#" $category) }}</a>
-                                    {{- end }}
-                                </div>
+                <div class="post-meta pb-6">
+                    <h1 class="title">{{ .Title }}</h1>
+                    <div class="subtitle is-6">
+                        <div class="columns is-multiline is-mobile">
+                            <div class="column">
+                                <p><time>{{ .PublishDate.Format "2006/01/02" }}</time> ・
+                                    {{ with .Params.categories }}
+                                    {{ $category := index . 0 }}
+                                    <a href="{{ " categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
+                                    {{ end }}
+                                </p>
+                            </div>
+                            <div class="column has-text-right">
+                                {{ range $idx, $tag := .Params.tags }}
+                                {{- if ne $idx 0 }} {{ end }}<a href="{{ " tags/" | relURL }}{{ $tag | urlize }}">{{ (print "#" $tag) }}</a>
+                                {{- end }}
                             </div>
                         </div>
                     </div>
                 </div>
-                {{ with .Params.images }}
-                <figure class="title-image">
-                    <img src="{{ index . 0 }}" alt="">
-                </figure>
+                {{ if .Params.showimage }}
+                    {{ with .Params.images }}
+                    <figure class="title-image">
+                        <img src="{{ index . 0 }}" alt="">
+                    </figure>
+                    {{ end }}
                 {{ end }}
                 <div class="content">
                     {{ .Content }}
                 </div>
             </div>
-        </div>
     </article>
 </section>
 <section class="section">
@@ -44,13 +43,13 @@
                 <div class="column has-text-left">
                     {{ with .PrevInSection }}
                     <p class="has-text-weight-semibold">Previous post</p>
-                    <a class="is-size-5" href="{{ .Permalink }}">{{ .Title }}</a>
+                    <a class="" href="{{ .Permalink }}">{{ .Title }}</a>
                     {{ end }}
                 </div>
                 <div class="column has-text-right">
                     {{ with .NextInSection }}
                     <p class="has-text-weight-semibold">Next post</p>
-                    <a class="is-size-5" href="{{ .Permalink }}">{{ .Title }}</a>
+                    <a class="" href="{{ .Permalink }}">{{ .Title }}</a>
                     {{ end }}
                 </div>
             </div>
@@ -78,7 +77,7 @@
                 {{ $related := (where (.Site.RegularPages.Related .) "Type" "blog") | first 3 }}
                 {{ range $related }}
                 <div class="column is-full py-2">
-                    <a class="is-size-5" href="{{ .Permalink }}">{{ .Title }}</a>
+                    <a class="" href="{{ .Permalink }}">{{ .Title }}</a>
                 </div>
                 {{ end }}
             </div>
