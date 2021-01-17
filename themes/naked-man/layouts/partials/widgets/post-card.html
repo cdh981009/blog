@@ -1,7 +1,7 @@
 {{ $simple := .simple | default false }}
 {{ with .context }}
 {{ $permalink := .Permalink }}
-<div class="card mx-0 my-3">
+<div class="card mx-0 {{ if not $simple }}my-3{{ else }}my-0{{ end }}">
     {{ if not $simple }}
         {{ with .Params.Images }}
             <div class="card-image">
@@ -19,11 +19,13 @@
                 {{ .Title }}
             </div>
         </a>
-        <div class="heading {{ if not $simple }}mb-4{{ else }}mb-0{{ end }}">
+        <div class="post-meta {{ if not $simple }}mb-4{{ else }}mb-0{{ end }}">
             <time>{{ .PublishDate.Format "2006/01/02" }}</time> ・
             {{ with .Params.categories }}
                 {{ $category := index . 0 }}
-                <a class="post-category" href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
+                <span class="tag post-category">
+                    <a class="" href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
+                </span>
             {{ end }}
         </div>
         {{ if not $simple }}
@@ -32,9 +34,11 @@
         </div>
         {{ end }}
         {{ if .Params.tags }}
-        <div class="columns mt-0 is-flex-wrap-wrap-reverse is-multiline is-mobile post-tags is-justify-content-flex-end has-text-primary">
+        <div class="post-tags columns is-flex-wrap-wrap-reverse is-multiline is-mobile is-justify-content-flex-end has-text-primary mt-0">
             {{ range .Params.tags }}
-            <a class="column p-0 is-narrow post-tag" href="/tags/{{ . | urlize}}">{{ print "#" . }}</a>
+            <span class="post-tag column is-narrow is-primary is-light p-0">
+                <a class="" href="/tags/{{ . | urlize}}">{{ print "#" . }}</a>
+            </span>
             {{ end }}
         </div>
         {{ end }}

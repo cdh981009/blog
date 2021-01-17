@@ -33,6 +33,10 @@ main {
 
 .post-tags .post-tag {
     font-size: 0.9rem;
+    //letter-spacing: 1px;
+}
+
+.post-tags .post-tag a {
     color: inherit;
 }
 
@@ -42,4 +46,20 @@ main {
 
 .post-tags .post-tag:not(:first-child) {
     margin-left: 0.75rem;
+}
+
+.post-meta .post-category {
+    font-size: 0.9rem;
+    padding-left: 0.60em;
+    padding-right: 0.60em;
+    height: 1.6em;
+    //letter-spacing: 1px;
+}
+
+.post-meta .post-category a {
+    color: inherit;
+}
+
+.post-meta a:hover {
+    text-decoration: underline;
 }
