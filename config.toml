@@ -53,6 +53,10 @@ copyright = "&copy;{year} [Cho Daeho](https://cdh981009.github.io/), All Rights 
 
   [[related.indices]]
       name = "categories"
+      weight = 90
+
+  [[related.indices]]
+      name = "tags"
       weight = 100
 
   [[related.indices]]
