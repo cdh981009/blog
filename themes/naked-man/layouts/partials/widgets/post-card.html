@@ -16,14 +16,18 @@
             </div>
         </a>
             <span class="heading mb-4">
-                <time>{{ .PublishDate.Format "2006/01/02"}}</time>
+                <time>{{ .PublishDate.Format "2006/01/02" }}</time> ・
+                {{ with .Params.categories }}
+                    {{ $category := index . 0 }}
+                    <a href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
+                {{ end }}
             </span>
         <div class="content">
             {{ .Summary }}
         </div>
         <div class="tags">
-            {{ range .Params.categories }}
-            <a class="tag is-light is-primary is-radiusless" href="/categories/{{ . | urlize}}">{{ . }}</a>
+            {{ range .Params.tags }}
+            <a class="tag is-light is-primary is-radiusless" href="/tags/{{ . | urlize}}">{{ . }}</a>
             {{ end }}
         </div>
     </div>
