@@ -6,6 +6,8 @@ images:
     - /images/blog/2019/03/fields.jpg
 categories:
     - Blogging
+tags:
+    - Lorem Ipsum
 ---
 
 Lorem ipsum dolor sit amet, consectetur...
