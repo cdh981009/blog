@@ -7,7 +7,7 @@
         <div class="columns is-multiline is-centered">
             {{ range first $count $pages }}
             <div class="column is-full max-800px">
-                {{ partial "widgets/post-card.html" . }}
+                {{ partial "widgets/post-card.html" (dict "context" .) }}
             </div>
             {{ end }}
         </div>

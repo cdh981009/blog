@@ -1,4 +1,4 @@
-$primary: #1a535c;
+//$primary: #1a535c;
 
 $footer-padding: 3rem 1.5rem 4rem;
 @import "bulma/bulma.sass";
@@ -29,4 +29,17 @@ main {
 .narrow-background {
     display: table;
     padding: 0.1em;
+}
+
+.post-tags .post-tag {
+    font-size: 0.9rem;
+    color: inherit;
+}
+
+.post-tags .post-tag:hover {
+    text-decoration: underline;
+}
+
+.post-tags .post-tag:not(:first-child) {
+    margin-left: 0.75rem;
 }

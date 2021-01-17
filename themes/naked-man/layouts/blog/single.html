@@ -77,7 +77,7 @@
                 {{ $related := (where (.Site.RegularPages.Related .) "Type" "blog") | first 3 }}
                 {{ range $related }}
                 <div class="column is-full">
-                    {{ partial "widgets/post-card-small.html" . }}
+                    {{ partial "widgets/post-card.html" (dict "context" . "simple" "true") }}
                 </div>
                 {{ end }}
             </div>
