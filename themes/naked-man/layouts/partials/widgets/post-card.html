@@ -14,8 +14,8 @@
         {{ end }}
     {{ end }}
     <div class="card-content">
-        <div class="mb-2">
-            <a class="title is-4" href="{{ .Permalink }}">
+        <div class="mb-3">
+            <a class="title is-3" href="{{ .Permalink }}">
                 {{ .Title }}
             </a>
         </div>
@@ -29,14 +29,14 @@
             {{ end }}
         </div>
         {{ if not $simple }}
-        <div class="content mb-4">
+        <div class="post-summary content">
             {{ .Summary }}
         </div>
         {{ end }}
         {{ if .Params.tags }}
         <div class="post-tags columns is-flex-wrap-wrap-reverse is-multiline is-mobile is-justify-content-flex-end has-text-grey mt-0">
             {{ range .Params.tags }}
-            <span class="post-tag column is-narrow is-primary is-light p-0">
+            <span class="post-tag column is-narrow is-primary is-light p-0 mt-3">
                 <a class="" href="/tags/{{ . | urlize}}">{{ print "#" . }}</a>
             </span>
             {{ end }}
