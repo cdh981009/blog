@@ -1,6 +1,8 @@
-//$primary: #1a535c;
+$primary: #2582a9;
 
 $footer-padding: 3rem 1.5rem 4rem;
+
+$body-family: "Noto Sans KR", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 @import "bulma/bulma.sass";
 
 .logo h1 {
@@ -31,10 +33,6 @@ main {
     padding: 0.1em;
 }
 
-.card .title:hover {
-    color: $primary-dark;
-}
-
 .post-tags .post-tag {
     font-size: 0.9rem;
     //letter-spacing: 1px;
@@ -53,11 +51,11 @@ main {
 }
 
 .post-meta {
-    letter-spacing: 1px;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
 }
 
 .post-meta .post-category {
-    font-size: 0.9rem;
     padding-left: 0.60em;
     padding-right: 0.60em;
     height: 1.6em;
@@ -69,4 +67,12 @@ main {
 
 .post-meta a:hover {
     text-decoration: underline;
+}
+
+.post-summary a {
+    color: inherit;
+}
+
+a.title:hover {
+    color: $primary-dark;
 }
