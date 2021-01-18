@@ -8,6 +8,7 @@ categories:
     - Category
 tags:
     - Tag
+showimage: false
 draft: true
 ---
 
