@@ -15,7 +15,7 @@
     {{ end }}
     <div class="card-content">
         <div class="mb-3">
-            <a class="title  {{ if not $simple }}is-3{{ else }}is-4{{ end }}" href="{{ .Permalink }}">
+            <a class="title {{ if not $simple }}is-3 is-size-4-mobile{{ else }}is-4{{ end }}" href="{{ .Permalink }}">
                 {{ .Title }}
             </a>
         </div>
