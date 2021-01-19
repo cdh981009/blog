@@ -39,7 +39,7 @@ copyright = "&copy;{year} [Cho Daeho](https://cdh981009.github.io/), All Rights 
 
 [[menu.social]]
   name = "GitHub"
-  pre = "<i class='fab fa-github-alt fa-lg'></i>"
+  pre = "<i class='fab fa-github fa-2x'></i>"
   url = "https://github.com/cdh981009"
 
 # [[menu.footer]]
