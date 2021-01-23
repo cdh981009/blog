@@ -1,9 +1,11 @@
-$primary: #2582a9;
+$primary: #03448c;
 
 $footer-padding: 3rem 1.5rem 4rem;
 
 $body-family: "Noto Sans KR", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 @import "bulma/bulma.sass";
+
+$link: $red;
 
 .logo h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -46,7 +48,7 @@ main {
     text-decoration: underline;
 }
 
-.post-tags .post-tag:not(:first-child) {
+.card .post-tags .post-tag:not(:first-child) {
     margin-left: 0.75rem;
 }
 
@@ -56,9 +58,18 @@ main {
 }
 
 .post-meta .post-category {
+    font-size: inherit;
     padding-left: 0.60em;
     padding-right: 0.60em;
     height: 1.6em;
+}
+
+.subtitle .post-meta .post-category {
+    vertical-align: unset;
+}
+
+.main-title {
+    letter-spacing: 3px;
 }
 
 .post-meta .post-category a {
