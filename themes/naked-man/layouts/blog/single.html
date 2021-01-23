@@ -17,6 +17,7 @@
                                     {{ end }}
                                 </p>
                             </div>
+                            {{ if .Params.tags }}
                             <div class="column pt-0 is-full columns is-mobile post-tags">
                                     {{ range $idx, $tag := .Params.tags }}
                                     <span class="post-tag column is-narrow has-text-grey pr-0">
@@ -24,6 +25,7 @@
                                     </span>
                                     {{- end }}
                             </div>
+                            {{ end }}
                         </div>
                     </div>
                 </div>
