@@ -24,7 +24,7 @@
             {{ with .Params.categories }}
                 {{ $category := index . 0 }}
                 <span class="tag post-category">
-                    <a class="" href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
+                    <a href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
                 </span>
             {{ end }}
         </div>
