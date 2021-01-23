@@ -6,19 +6,23 @@
                 <div class="pb-6">
                     <h1 class="title is-2 is-size-3-mobile">{{ .Title }}</h1>
                     <div class="subtitle is-6">
-                        <div class="columns is-multiline is-mobile">
-                            <div class="column">
+                        <div class="columns is-multiline">
+                            <div class="column is-full post-meta">
                                 <p><time>{{ .PublishDate.Format "2006/01/02" }}</time> ・
                                     {{ with .Params.categories }}
                                     {{ $category := index . 0 }}
-                                    <a href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
+                                    <span class="tag post-category">
+                                        <a href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
+                                    </span>
                                     {{ end }}
                                 </p>
                             </div>
-                            <div class="column has-text-right">
-                                {{ range $idx, $tag := .Params.tags }}
-                                {{- if ne $idx 0 }} {{ end }}<a href="{{ " tags/" | relURL }}{{ $tag | urlize }}">{{ (print "#" $tag) }}</a>
-                                {{- end }}
+                            <div class="column pt-0 is-full columns is-mobile post-tags">
+                                    {{ range $idx, $tag := .Params.tags }}
+                                    <span class="post-tag column is-narrow has-text-grey pr-0">
+                                        <a href="{{ " tags/" | relURL }}{{ $tag | urlize }}">{{ (print "#" $tag) }}</a>
+                                    </span>
+                                    {{- end }}
                             </div>
                         </div>
                     </div>
@@ -36,7 +40,7 @@
             </div>
     </article>
 </section>
-    <hr class="max-800px center has-background-grey-lighter my-0">
+<hr class="max-800px center has-background-grey-lighter my-0">
 <section class="section">
     <div class="columns is-centered">
         <div class="column max-800px">
