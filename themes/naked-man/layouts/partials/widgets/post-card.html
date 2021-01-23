@@ -1,7 +1,7 @@
 {{ $simple := .simple | default false }}
 {{ with .context }}
 {{ $permalink := .Permalink }}
-<div class="card mx-0 {{ if not $simple }}my-3{{ else }}my-0{{ end }}">
+<div class="post-card card mx-0 {{ if not $simple }}my-3{{ else }}my-0{{ end }}">
     {{ if not $simple }}
         {{ with .Params.Images }}
             <div class="card-image">
