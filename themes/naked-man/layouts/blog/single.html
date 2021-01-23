@@ -49,14 +49,14 @@
             <div class="columns is-mobile">
                 <div class="column has-text-left">
                     {{ with .PrevInSection }}
-                    <p class="has-text-weight-semibold">Previous post</p>
-                    <a class="" href="{{ .Permalink }}">{{ .Title }}</a>
+                    <p class="pb-3"><i class="fas fa-arrow-left"></i> Previous post</p>
+                    <a class="title has-text-weight-semibold is-size-5" href="{{ .Permalink }}">{{ .Title }}</a>
                     {{ end }}
                 </div>
                 <div class="column has-text-right">
                     {{ with .NextInSection }}
-                    <p class="has-text-weight-semibold">Next post</p>
-                    <a class="" href="{{ .Permalink }}">{{ .Title }}</a>
+                        <p class="pb-3">Next post <i class="fas fa-arrow-right"></i></p>
+                        <a class="title has-text-weight-semibold is-size-5" href="{{ .Permalink }}">{{ .Title }}</a>
                     {{ end }}
                 </div>
             </div>
