@@ -74,7 +74,9 @@ main {
 }
 
 .main-title {
-    letter-spacing: 3px;
+    letter-spacing: 0.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 .post-meta .post-category a {
