@@ -8,8 +8,9 @@ $body-family: "Noto Sans KR", BlinkMacSystemFont, -apple-system, "Segoe UI", "Ro
 $link: $red;
 
 .logo h1 {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 1.5em;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 body {
