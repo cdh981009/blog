@@ -2,8 +2,6 @@
 title: "Heavy-light decomposition and centroid decomposition in competitive problem solving"
 date: 2021-01-08T23:08:52+09:00
 description: "Short description"
-images:
-    - /images/blog/2019/03/fields.jpg
 categories:
     - Etc
 ---

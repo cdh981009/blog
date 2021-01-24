@@ -2,8 +2,6 @@
 title: "This Post is Full of Loren Ipsum"
 date: 2021-01-05T20:48:31+09:00
 description: "This is a short description of the page"
-images:
-    - /images/blog/2019/03/fields.jpg
 categories:
     - Blogging
 tags:
