@@ -3,7 +3,7 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 description: "Short description"
 images:
-    - /images/blog/2021/01/pain.jpg
+    - /images/blog/2021/01/image.jpg
 categories:
     - Category
 tags:
