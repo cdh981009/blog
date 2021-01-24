@@ -24,7 +24,7 @@ main {
     flex: 1;
 }
 
-$width-sizes: 600px, 700px, 800px;
+$width-sizes: 400px, 500px, 600px, 700px, 800px;
 
 @each $size in $width-sizes {
   .max-#{$size} {
