@@ -1,7 +1,7 @@
 {{ $simple := .simple | default false }}
 {{ with .context }}
 {{ $permalink := .Permalink }}
-<div class="post-card card mx-0 {{ if not $simple }}my-3{{ else }}my-0{{ end }}">
+<div class="post-card card mx-0 {{ if not $simple }}my-2{{ else }}my-0{{ end }}">
     {{ if not $simple }}
         {{ with .Params.Images }}
             <div class="card-image">
@@ -15,7 +15,7 @@
     {{ end }}
     <div class="card-content">
         <div class="mb-3">
-            <a class="title {{ if not $simple }}is-3 is-size-4-mobile{{ else }}is-4{{ end }}" href="{{ .Permalink }}">
+            <a class="title is-4" href="{{ .Permalink }}">
                 {{ .Title }}
             </a>
         </div>
