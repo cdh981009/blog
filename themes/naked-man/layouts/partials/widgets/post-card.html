@@ -19,7 +19,7 @@
                 {{ .Title }}
             </a>
         </div>
-        <div class="post-meta {{ if not $simple }}mb-4{{ else }}mb-0{{ end }}">
+        <div class="post-meta {{ if not $simple }}mb-3{{ else }}mb-0{{ end }}">
             <time>{{ .PublishDate.Format "2006/01/02" }}</time> ・
             {{ with .Params.categories }}
                 {{ $category := index . 0 }}
