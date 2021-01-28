@@ -1,9 +1,11 @@
 {{ define "main" }}
 <div class="container">
     <div class="section">
-        <a href="/categories/">Back to categories</a>
-        <div class="title is-2 has-text-centered">
-            Category: {{ .Title }}
+        <div class="term has-text-centered has-text-grey mb-1">
+            <a href="/categories/"><i class="fas fa-angle-left"></i> Categories</a>
+        </div>
+        <div class="title has-text-centered">
+        {{ .Title }}
         </div>
         {{ with .Content }}
         <div class="content">
