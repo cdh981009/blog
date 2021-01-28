@@ -4,9 +4,9 @@
 <section class="section">
     <div class="container">
         <h2 class="title has-text-centered">Recent Posts</h2>
-        <div class="columns is-multiline is-centered">
+        <div class="columns max-800px is-multiline is-align-center">
             {{ range first $count $pages }}
-            <div class="column is-full max-800px">
+            <div class="column is-full">
                 {{ partial "widgets/post-card.html" (dict "context" .) }}
             </div>
             {{ end }}
