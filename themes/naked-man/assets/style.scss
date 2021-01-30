@@ -1,8 +1,8 @@
 $primary: #03448c;
-
 $footer-padding: 3rem 1.5rem 4rem;
-
 $body-family: "Noto Sans KR", sans-serif;
+$blue: #0f7ffa; // primary-dark;
+$link: $blue;
 
 @import "bulma/bulma.sass";
 
