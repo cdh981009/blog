@@ -103,7 +103,7 @@ a.title:hover {
 
 .utterances {
     transition: height 0.5s linear;
-    height: 0;
+    min-height: 268px;
 }
 
 .term a:hover {
