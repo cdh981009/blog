@@ -91,6 +91,11 @@ a.title:hover {
     color: $primary-dark;
 }
 
+.term {
+    position: relative;
+    left: -0.3rem;
+}
+
 .term a {
     color: inherit;
     //text-decoration: underline;
