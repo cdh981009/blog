@@ -101,6 +101,11 @@ a.title:hover {
     //text-decoration: underline;
 }
 
+.utterances {
+    transition: height 0.66s ease-out;
+    height: fit-content;
+}
+
 .term a:hover {
     color: $primary-dark;
 }
