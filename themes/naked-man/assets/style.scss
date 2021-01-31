@@ -51,6 +51,17 @@ $width-sizes: 400px, 500px, 600px, 700px, 800px;
     text-decoration: underline;
 }
 
+.post-card-columns {
+    padding-bottom: 1.5rem;
+}
+
+.post-card-column {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
 .post-card .post-tags .post-tag:not(:first-child) {
     margin-left: 0.75rem;
 }
@@ -61,13 +72,13 @@ $width-sizes: 400px, 500px, 600px, 700px, 800px;
 
 .post-meta {
     font-size: 0.9rem;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
 .post-meta .post-category {
     font-size: inherit;
-    padding-left: 0.60em;
-    padding-right: 0.60em;
+    padding-left: 0.50em;
+    padding-right: 0.50em;
     height: 1.6em;
     align-items: unset;
 }
