@@ -7,7 +7,7 @@ languageCode = "kr"
 hasCJKLanguage = true
 summaryLength = 30
 
-copyright = "&copy;{year} [Cho Daeho](https://cdh981009.github.io/), All Rights Reserved"
+copyright = "&copy;{year} [Cho Daeho](mailto:cdh981009@gmail.com), All Rights Reserved"
 
 # todo: add google analytics
 # googleAnalytics = ""
