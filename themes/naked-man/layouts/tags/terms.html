@@ -9,16 +9,15 @@
             {{ . }}
         </div>
         {{ end }}
-        <div class="field is-align-center max-800px is-grouped is-grouped-multiline">
-            {{ range .Data.Terms.Alphabetical }}
-            <div class="control">
-                <div class="tags are-medium has-addons">
-                    <a class="tag is-light" href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
-                    {{ $pageCount := len .Pages }}
-                    <!--<span class="tag is-link">{{ $pageCount }}</span>-->
-                </div>
+        <div class="is-align-center max-800px">
+            <div class="tags are-medium">
+                {{ range .Data.Terms.Alphabetical }}
+                {{ $pageCount := len .Pages }}
+                <a class="tag" href="{{ .Page.Permalink }}">{{ .Page.Title }}
+                    <span class="has-text-grey">&nbsp;({{ $pageCount }})</span>
+                </a>
+                {{ end }}
             </div>
-            {{ end }}
         </div>
     </section>
 </div>
