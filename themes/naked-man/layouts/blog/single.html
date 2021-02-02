@@ -23,9 +23,9 @@
                         </div>
                         {{ if .Params.tags }}
                         <div class="column is-full">
-                            <div class="columns is-mobile post-tags">
+                            <div class="columns py-3 is-mobile is-multiline post-tags">
                                 {{ range $idx, $tag := .Params.tags }}
-                                <span class="post-tag column is-narrow has-text-grey pr-0">
+                                <span class="post-tag py-0 column is-narrow has-text-grey pr-0">
                                     <a href="{{ "tags/" | relURL }}{{ $tag | urlize }}">{{ (print "#" $tag) }}</a>
                                 </span>
                                 {{- end }}
