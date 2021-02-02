@@ -23,6 +23,12 @@ main {
     flex: 1;
 }
 
+@media print {
+    .navbar {
+        display: none;
+    }
+}
+
 $width-sizes: 400px, 500px, 600px, 700px, 800px;
 
 @each $size in $width-sizes {
