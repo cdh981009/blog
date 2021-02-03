@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="container">
+    <section class="section">
+        <div class="title has-text-centered mb-6">
+            {{ .Title }}
+        </div>
+        {{ with .Content }}
+        <div class="content">
+            {{ . }}
+        </div>
+        {{ end }}
+        <div class="is-align-center max-800px">
+            <div class="tags are-medium">
+                {{ range .Data.Terms.Alphabetical }}
+                {{ $pageCount := len .Pages }}
+                <a class="tag" href="{{ .Page.Permalink }}">{{ .Page.Title }}
+                    <span class="has-text-grey">&nbsp;({{ $pageCount }})</span>
+                </a>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+</div>
+{{ end }}

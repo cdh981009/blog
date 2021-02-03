@@ -1,15 +1,16 @@
 {{ $count := .Get "count" | default 6 }}
 {{ $pages := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
 
-<section class="section">
-    <div class="container">
+<div class="container">
+    <section class="section">
         <h2 class="title has-text-centered">Recent Posts</h2>
-        <div class="columns max-800px is-multiline is-align-center">
+        <div class="max-800px is-align-center post-card-columns">
             {{ range first $count $pages }}
-            <div class="column is-full">
+            <div class="post-card-column">
                 {{ partial "widgets/post-card.html" (dict "context" .) }}
             </div>
             {{ end }}
         </div>
-    </div>
-</section>
+        <a class="button is-link has-text-weight-bold is-inverted max-400px is-align-center is-large" href="/blog">Show all posts</a>
+    </section>
+</div>

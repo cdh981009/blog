@@ -4,6 +4,7 @@ date: 2021-01-08T23:08:52+09:00
 description: "Short description"
 categories:
     - Etc
+draft: true
 ---
 
 This is a long summary of the post This is a long summary of the post This is a long summary of the post This is a long summary of the post This is a long summary of the post This is a long summary of the post This is a long summary of the post

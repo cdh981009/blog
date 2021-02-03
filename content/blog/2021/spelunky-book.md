@@ -5,7 +5,7 @@ description: "Spelunky의 제작자 Derek Yu가 쓴 게임과 동명의 책의 �
 images:
     - /images/blog/2021/01/spelunky-cover.png
 categories:
-    - Etc
+    - Thoughts
 tags:
     - Spelunky
     - Book

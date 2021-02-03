@@ -14,19 +14,23 @@
         {{ end }}
     {{ end }}
     <div class="card-content">
-        <div class="mb-2">
+        <div class="mb-1">
             <a class="title is-4" href="{{ .Permalink }}">
                 {{ .Title }}
             </a>
         </div>
-        <div class="post-meta {{ if not $simple }}mb-4{{ else }}mb-0{{ end }}">
-            <time>{{ .PublishDate.Format "2006/01/02" }}</time> ・
+        <div class="post-meta columns m-0 is-mobile is-flex-wrap-wrap {{ if not $simple }}mb-4{{ else }}mb-0{{ end }}">
+            <div class="column is-narrow pl-0 pr-1 pt-1 pb-0">
+                <time>{{ .PublishDate.Format "2006/01/02" }}</time> ・
+            </div>
             {{ with .Params.categories }}
+            <div class="column is-narrow px-0 pt-1 pb-0">
                 {{ $category := index . 0 }}
                 <span class="tag post-category">
                     <a href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
                 </span>
-            {{ end }}
+                {{ end }}
+            </div>
         </div>
         {{ if not $simple }}
         <div class="post-summary content">
@@ -34,9 +38,9 @@
         </div>
         {{ end }}
         {{ if .Params.tags }}
-        <div class="post-tags columns is-flex-wrap-wrap-reverse is-multiline is-mobile is-justify-content-flex-end has-text-grey mt-0">
+        <div class="post-tags columns is-flex-wrap-wrap is-multiline is-mobile is-justify-content-flex-end pt-3">
             {{ range .Params.tags }}
-            <span class="post-tag column is-narrow p-0 mt-3">
+            <span class="post-tag column is-narrow has-text-grey p-0">
                 <a class="" href="/tags/{{ . | urlize}}">{{ print "#" . }}</a>
             </span>
             {{ end }}

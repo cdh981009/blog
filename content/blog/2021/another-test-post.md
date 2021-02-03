@@ -6,6 +6,7 @@ categories:
     - Etc
 tags:
     - Natalia Lafourcade
+draft: true
 ---
 
 호롤롤롤로. 이기면 승리 지면 패배. 가나다라마바사아자차카타파하.

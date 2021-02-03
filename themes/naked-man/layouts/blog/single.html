@@ -4,29 +4,34 @@
         <div class="columns is-centered">
             <div class="column max-800px">
                 <div class="pb-6">
-                    <h1 class="title is-2 is-size-3-mobile">{{ .Title }}</h1>
-                    <div class="subtitle is-6">
-                        <div class="columns is-multiline">
-                            <div class="column is-full post-meta">
-                                <p><time>{{ .PublishDate.Format "2006/01/02" }}</time> ・
-                                    {{ with .Params.categories }}
+                    <h1 class="title is-2 is-size-3-mobile mb-2">{{ .Title }}</h1>
+                    <div class="columns is-multiline">
+                        <div class="column is-full pb-0">
+                            <div class="post-meta columns m-0 is-mobile is-flex-wrap-wrap">
+                                <div class="column is-narrow pl-0 pr-1 pt-1 pb-0">
+                                    <time>{{ .PublishDate.Format "2006/01/02" }}</time> ・
+                                </div>
+                                {{ with .Params.categories }}
+                                <div class="column is-narrow px-0 pt-1 pb-0">
                                     {{ $category := index . 0 }}
                                     <span class="tag post-category">
                                         <a href="{{ "categories/" | relURL }}{{ $category | urlize }}">{{ $category }}</a>
                                     </span>
                                     {{ end }}
-                                </p>
+                                </div>
                             </div>
-                            {{ if .Params.tags }}
-                            <div class="column pt-0 is-full columns is-mobile post-tags">
-                                    {{ range $idx, $tag := .Params.tags }}
-                                    <span class="post-tag column is-narrow has-text-grey pr-0">
-                                        <a href="{{ " tags/" | relURL }}{{ $tag | urlize }}">{{ (print "#" $tag) }}</a>
-                                    </span>
-                                    {{- end }}
-                            </div>
-                            {{ end }}
                         </div>
+                        {{ if .Params.tags }}
+                        <div class="column is-full">
+                            <div class="columns py-3 is-mobile is-multiline post-tags">
+                                {{ range $idx, $tag := .Params.tags }}
+                                <span class="post-tag py-0 column is-narrow has-text-grey pr-0">
+                                    <a href="{{ "tags/" | relURL }}{{ $tag | urlize }}">{{ (print "#" $tag) }}</a>
+                                </span>
+                                {{- end }}
+                            </div>
+                        </div>
+                        {{ end }}
                     </div>
                 </div>
                 {{ if .Params.showimage }}
@@ -46,19 +51,19 @@
 <section class="section">
     <div class="columns is-centered">
         <div class="column max-800px">
-            <div class="columns is-mobile">
-                <div class="column has-text-left">
-                    {{ with .PrevInSection }}
+            <div class="columns is-multiline is-mobile">
+                {{ with .PrevInSection }}
+                <div class="column is-narrow max-100p">
                     <p class="pb-3"><i class="fas fa-arrow-left"></i> Previous post</p>
                     <a class="title has-text-weight-semibold is-size-5" href="{{ .Permalink }}">{{ .Title }}</a>
-                    {{ end }}
                 </div>
-                <div class="column has-text-right">
-                    {{ with .NextInSection }}
-                        <p class="pb-3">Next post <i class="fas fa-arrow-right"></i></p>
-                        <a class="title has-text-weight-semibold is-size-5" href="{{ .Permalink }}">{{ .Title }}</a>
-                    {{ end }}
+                {{ end }}
+                {{ with .NextInSection }}
+                <div class="column is-narrow max-100p has-text-right ml-auto">
+                    <p class="pb-3">Next post <i class="fas fa-arrow-right"></i></p>
+                    <a class="title has-text-weight-semibold is-size-5" href="{{ .Permalink }}">{{ .Title }}</a>
                 </div>
+                {{ end }}
             </div>
         </div>
     </div>

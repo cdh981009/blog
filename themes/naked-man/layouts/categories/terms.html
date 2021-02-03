@@ -9,10 +9,9 @@
             {{ . }}
         </div>
         {{ end }}
-        <div class="columns is-align-center is-multiline max-500px">
+        <div class="max-500px is-align-center">
             {{ range .Data.Terms.Alphabetical }}
-            <div class="column is-full p-2">
-                <div class="box p-4">
+                <div class="box p-4 mx-2 my-4">
                     <div class="columns is-mobile is-vcentered">
                         <div class="column has-text-left">
                             <a class="title is-5 is-size-6-mobile" href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
@@ -25,7 +24,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
             {{ end }}
         </div>
     </section>

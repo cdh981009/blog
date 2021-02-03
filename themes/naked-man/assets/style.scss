@@ -1,8 +1,15 @@
-$primary: #03448c;
+$indigo: #03448c;
+$indigo-light: #0e74e4;
 
-$footer-padding: 3rem 1.5rem 4rem;
+$primary: $indigo;
+$blue: $indigo-light;
+
+$link: $blue;
 
 $body-family: "Noto Sans KR", sans-serif;
+$body-line-height: 1.7;
+
+$footer-padding: 3rem 1.5rem 4rem;
 
 @import "bulma/bulma.sass";
 
@@ -22,6 +29,12 @@ main {
     flex: 1;
 }
 
+@media print {
+    .navbar {
+        display: none;
+    }
+}
+
 $width-sizes: 400px, 500px, 600px, 700px, 800px;
 
 @each $size in $width-sizes {
@@ -30,8 +43,22 @@ $width-sizes: 400px, 500px, 600px, 700px, 800px;
   }
 }
 
+.ml-auto {
+    margin-left: auto;
+}
+
+.max-100p {
+    max-width: 100%;
+}
+
 .title-image {
     padding-bottom: 2em;
+}
+
+.main-title {
+    letter-spacing: 0.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 .narrow-background {
@@ -51,6 +78,17 @@ $width-sizes: 400px, 500px, 600px, 700px, 800px;
     text-decoration: underline;
 }
 
+.post-card-columns {
+    padding-bottom: 1.5rem;
+}
+
+.post-card-column {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
 .post-card .post-tags .post-tag:not(:first-child) {
     margin-left: 0.75rem;
 }
@@ -61,22 +99,15 @@ $width-sizes: 400px, 500px, 600px, 700px, 800px;
 
 .post-meta {
     font-size: 0.9rem;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
 .post-meta .post-category {
     font-size: inherit;
-    padding-left: 0.60em;
-    padding-right: 0.60em;
+    padding-left: 0.50em;
+    padding-right: 0.50em;
     height: 1.6em;
-    vertical-align: unset;
     align-items: unset;
-}
-
-.main-title {
-    letter-spacing: 0.1rem;
-    font-weight: 900;
-    text-transform: uppercase;
 }
 
 .post-meta .post-category a {
@@ -88,7 +119,12 @@ $width-sizes: 400px, 500px, 600px, 700px, 800px;
 }
 
 a.title:hover {
-    color: $primary-dark;
+    color: $link;
+}
+
+.term {
+    position: relative;
+    left: -0.3rem;
 }
 
 .term a {
@@ -97,7 +133,12 @@ a.title:hover {
 }
 
 .term a:hover {
-    color: $primary-dark;
+    color: $link;
+}
+
+.utterances {
+    transition: height 0.5s linear;
+    min-height: 268px;
 }
 
 .is-align-center {

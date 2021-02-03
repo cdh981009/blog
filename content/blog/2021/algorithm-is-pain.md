@@ -9,6 +9,7 @@ categories:
 tags:
     - Pain
 showimage: false
+draft: true
 ---
 
 알고리즘을 왜 하는지에 대한 고찰이다.
