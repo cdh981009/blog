@@ -1,9 +1,15 @@
-$primary: #03448c;
-$footer-padding: 3rem 1.5rem 4rem;
-$body-family: "Noto Sans KR", sans-serif;
-$blue: #0f7ffa; // primary-dark;
+$indigo: #03448c;
+$indigo-light: #0e74e4;
+
+$primary: $indigo;
+$blue: $indigo-light;
+
 $link: $blue;
+
+$body-family: "Noto Sans KR", sans-serif;
 $body-line-height: 1.7;
+
+$footer-padding: 3rem 1.5rem 4rem;
 
 @import "bulma/bulma.sass";
 
@@ -39,6 +45,12 @@ $width-sizes: 400px, 500px, 600px, 700px, 800px;
 
 .title-image {
     padding-bottom: 2em;
+}
+
+.main-title {
+    letter-spacing: 0.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 .narrow-background {
@@ -90,12 +102,6 @@ $width-sizes: 400px, 500px, 600px, 700px, 800px;
     align-items: unset;
 }
 
-.main-title {
-    letter-spacing: 0.1rem;
-    font-weight: 900;
-    text-transform: uppercase;
-}
-
 .post-meta .post-category a {
     color: inherit;
 }
@@ -105,7 +111,7 @@ $width-sizes: 400px, 500px, 600px, 700px, 800px;
 }
 
 a.title:hover {
-    color: $primary-dark;
+    color: $link;
 }
 
 .term {
@@ -118,13 +124,13 @@ a.title:hover {
     //text-decoration: underline;
 }
 
+.term a:hover {
+    color: $link;
+}
+
 .utterances {
     transition: height 0.5s linear;
     min-height: 268px;
-}
-
-.term a:hover {
-    color: $primary-dark;
 }
 
 .is-align-center {
