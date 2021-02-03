@@ -51,17 +51,17 @@
 <section class="section">
     <div class="columns is-centered">
         <div class="column max-800px">
-            <div class="columns is-mobile">
-                <div class="column has-text-left">
+            <div class="columns is-multiline is-mobile">
+                <div class="column is-narrow max-100p">
                     {{ with .PrevInSection }}
                     <p class="pb-3"><i class="fas fa-arrow-left"></i> Previous post</p>
                     <a class="title has-text-weight-semibold is-size-5" href="{{ .Permalink }}">{{ .Title }}</a>
                     {{ end }}
                 </div>
-                <div class="column has-text-right">
+                <div class="column is-narrow max-100p has-text-right ml-auto">
                     {{ with .NextInSection }}
-                        <p class="pb-3">Next post <i class="fas fa-arrow-right"></i></p>
-                        <a class="title has-text-weight-semibold is-size-5" href="{{ .Permalink }}">{{ .Title }}</a>
+                    <p class="pb-3">Next post <i class="fas fa-arrow-right"></i></p>
+                    <a class="title has-text-weight-semibold is-size-5" href="{{ .Permalink }}">{{ .Title }}</a>
                     {{ end }}
                 </div>
             </div>
