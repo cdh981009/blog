@@ -9,8 +9,7 @@ summaryLength = 30
 
 copyright = "&copy;{year} [Cho Daeho](mailto:cdh981009@gmail.com), All Rights Reserved"
 
-# todo: add google analytics
-# googleAnalytics = ""
+googleAnalytics = "UA-188922441-1"
 
 [markup.goldmark.renderer]
   unsafe = true
