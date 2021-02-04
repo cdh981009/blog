@@ -11,6 +11,15 @@ copyright = "&copy;{year} [Cho Daeho](mailto:cdh981009@gmail.com), All Rights Re
 
 googleAnalytics = "UA-188922441-1"
 
+enableRobotsTXT = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+
 [markup.goldmark.renderer]
   unsafe = true
 
