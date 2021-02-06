@@ -14,7 +14,7 @@ googleAnalytics = "UA-188922441-1"
 enableRobotsTXT = true
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS"]
 
 [sitemap]
   changefreq = "weekly"
