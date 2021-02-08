@@ -1,4 +1,4 @@
-baseURL = "https://chodaeho.com/blog/"
+baseURL = "https://blog.chodaeho.com/"
 theme = "naked-man"
 title = "Crypt"
 paginate = 6
@@ -6,9 +6,6 @@ paginate = 6
 languageCode = "kr"
 hasCJKLanguage = true
 summaryLength = 30
-
-RelativeURLs = true
-CanonifyURLs = true
 
 copyright = "&copy;{year} [Cho Daeho](mailto:cdh981009@gmail.com), All Rights Reserved"
 
