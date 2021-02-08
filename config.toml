@@ -1,4 +1,4 @@
-baseURL = "https://chodaeho.com/"
+baseURL = "https://chodaeho.com/blog/"
 theme = "naked-man"
 title = "Crypt"
 paginate = 6
@@ -6,6 +6,9 @@ paginate = 6
 languageCode = "kr"
 hasCJKLanguage = true
 summaryLength = 30
+
+RelativeURLs = true
+CanonifyURLs = true
 
 copyright = "&copy;{year} [Cho Daeho](mailto:cdh981009@gmail.com), All Rights Reserved"
 
@@ -26,25 +29,29 @@ enableRobotsTXT = true
 [params]
   description = "Daeho's Crypt"
   author = "조대호"
-  mainSections = ["blog"]
+  mainSections = ["posts"]
   startYear = 2021
 
 [[menu.main]] 
   name = "About"
   url = "/about"
+  weight = -100
 
 [[menu.main]]
-  name = "Blog"
-  url = "/blog"
+  name = "Posts"
+  url = "/posts"
+  weight = -90
 
 [[menu.main]]
   name = "Categories"
   url = "/categories"
+  weight = -80
   
 [[menu.main]]
   name = "Tags"
   url = "/tags"
-
+  weight = -70
+  
 [[menu.social]]
   name = "GitHub"
   pre = "<i class='fab fa-github fa-2x'></i>"
