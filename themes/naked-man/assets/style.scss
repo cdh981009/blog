@@ -138,6 +138,10 @@ a.title:hover {
     color: $link;
 }
 
+.term-text {
+    padding-left: 0.2rem;
+}
+
 .utterances {
     transition: height 0.5s linear;
     min-height: 268px;
