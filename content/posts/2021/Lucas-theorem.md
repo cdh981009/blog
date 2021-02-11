@@ -1,6 +1,6 @@
 ---
 title: "뤼카의 정리(Lucas' theorem)"
-date: 2021-02-09T22:36:43+09:00
+date: 2021-02-11T22:36:43+09:00
 description: "오일러 피(파이) 함수(Euler's Totient Function)에 대한 설명과 증명"
 categories:
     - Algorithm
