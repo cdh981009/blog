@@ -26,18 +26,19 @@ titlemath: "$$\\binom m n \\equiv \\prod_{i=0}^k \\binom {m_i} {n_i} \\pmod p $$
 
 `$$n = n_k p^k + n_{k-1}p^{k-1} + \cdots + n_1 p + n_0$$`
 
+## 사용
+
+아주 큰 숫자 m, n에 대해 이항 계수 `$\binom m n$`을 구해야 하나 정확한 값을 알 필요는 없고 적당히 작은 소수 p로 나눈 나머지만 알면 될 때 사용할 수 있다.
 
 ## 증명
 
-천천히 따라오면 어렵지 않다.
-
-### step 1
+#### step 1
 
 p가 소수이고 n이 `$1 \le n \le p - 1$`인 정수일 때, 이항 계수 (p, n)은 다음과 같다.
 
 `$$\binom p n = {{p \cdot (p - 1) \cdots (p - n - 1)} \over {n \cdot (n - 1) \cdots 1}} $$`
 
-이 식의 분모는 p로 나누어 떨어지지 않고(`$\because n \le p - 1$`) 분자는 p로 나누어 떨어진다.
+이 식의 분모는 p로 나누어 떨어지지 않고(`$\because n \le p - 1$`, p는 소수) 분자는 p로 나누어 떨어진다.
 
 따라서 `$p \mid \binom p n$`이고 이를 통해 다음 식을 얻을 수 있다.
 
@@ -47,7 +48,7 @@ p가 소수이고 n이 `$1 \le n \le p - 1$`인 정수일 때, 이항 계수 (p,
 
 `$$(1 + X)^{p^i} \equiv 1 + X^{p^i} \pmod p$$`
 
-### step 2
+#### step 2
 
 이제 음수가 아닌 정수 m과 소수 p가 있다고 하자. 이때 m을 다음과 같이 표현할 수 있다.
 
@@ -88,7 +89,7 @@ $$`
 \sum_{n=0}^m {\binom m n}X^n \equiv \sum_{n=0}^m \left(\prod_{i=0}^k \binom {m_i} {n_i}\right) X^n \pmod p
 $$`
 
-임의의 `$n \space (1 \le n \le m)$`에 대해 `$X^n$`의 계수가 같으므로 결론적으로 우리가 원하는 식을 얻을 수 있다.
+임의의 `$n \space (1 \le n \le m)$`에 대해 양 변의 `$X^n$`의 계수가 합동이므로 결론적으로 우리가 원하는 합동식을 얻을 수 있다.
 
 `$$ \therefore \binom m n \equiv \prod_{i=0}^k \binom {m_i} {n_i} \pmod p $$`
 
