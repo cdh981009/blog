@@ -90,6 +90,6 @@ $$`
 
 임의의 `$n \space (1 \le n \le m)$`에 대해 `$X^n$`의 계수가 같으므로 결론적으로 우리가 원하는 식을 얻을 수 있다.
 
-`$$\binom m n \equiv \prod_{i=0}^k \binom {m_i} {n_i} \pmod p $$`
+`$$ \therefore \binom m n \equiv \prod_{i=0}^k \binom {m_i} {n_i} \pmod p $$`
 
 **출처**: [위키백과](https://en.wikipedia.org/wiki/Lucas%27s_theorem)
