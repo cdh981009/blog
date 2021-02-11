@@ -10,6 +10,7 @@
         {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}
     {{ $template := resources.Get "style.scss" }}
+    {{ partial "mathjax.html" . }}
     {{ $style := $template | resources.ExecuteAsTemplate "style.scss" . | resources.ToCSS (dict "outputStyle" "compressed") | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">

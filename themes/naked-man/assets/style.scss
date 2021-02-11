@@ -156,3 +156,32 @@ a.title:hover {
 .is-width-full {
     width: 100%;
 }
+
+code.has-jax {
+    font: inherit;
+    font-size: 1rem;
+    background: inherit;
+    border: inherit;
+    color: inherit;
+    padding: 0.2rem;
+}
+
+code.has-jax.display{
+    padding: 0;
+}
+
+code.has-jax mjx-container {
+    overflow: auto;
+}
+
+span.math-center code.has-jax.display mjx-container {
+    text-align: center;
+    padding-left: 0;
+}
+
+code.has-jax.display mjx-container {
+    padding-left: 3rem;
+    @include mobile {
+        padding-left: 0;
+    }
+}

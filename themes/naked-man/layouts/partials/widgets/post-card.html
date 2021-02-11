@@ -34,6 +34,13 @@
         </div>
         {{ if not $simple }}
         <div class="post-summary content">
+            {{ if .Params.titlemath | default false }}
+            <span class="math-center">
+                <code>
+                    {{ .Params.titlemath }}
+                </code>
+            </span>
+            {{ end }}
             {{ .Summary }}
         </div>
         {{ end }}

@@ -1,6 +1,6 @@
 [build]
 publish = "public"
-command = "hugo --gc --minify"
+command = "rm -rf * && hugo --gc --minify"
 
 [context.production.environment]
 HUGO_VERSION = "0.80.0"
@@ -28,3 +28,9 @@ HUGO_VERSION = "0.80.0"
 
 [context.next.environment]
 HUGO_ENABLEGITINFO = "true"
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/posts/:splat"
+  status = 301
+  force = true
