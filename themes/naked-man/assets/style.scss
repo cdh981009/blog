@@ -70,10 +70,9 @@ $width-sizes: 400px, 500px, 600px, 700px, 800px;
 
 .post-tags .post-tag {
     font-size: 0.9rem;
-}
-
-.post-tags .post-tag a {
-    color: inherit;
+    a {
+        color: inherit;
+    }
 }
 
 .post-tags .post-tag:hover {
@@ -102,22 +101,19 @@ $width-sizes: 400px, 500px, 600px, 700px, 800px;
 .post-meta {
     font-size: 0.9rem;
     letter-spacing: 1px;
-}
-
-.post-meta .post-category {
-    font-size: inherit;
-    padding-left: 0.50em;
-    padding-right: 0.50em;
-    height: 1.6em;
-    align-items: unset;
-}
-
-.post-meta .post-category a {
-    color: inherit;
-}
-
-.post-meta a:hover {
-    text-decoration: underline;
+    .post-category {
+        font-size: inherit;
+        padding-left: 0.50em;
+        padding-right: 0.50em;
+        height: 1.6em;
+        align-items: unset;
+        a {
+            color: inherit;
+        }
+    }
+    a:hover {
+        text-decoration: underline;
+    }
 }
 
 a.title:hover {
@@ -127,15 +123,13 @@ a.title:hover {
 .term {
     position: relative;
     left: -0.3rem;
-}
-
-.term a {
-    color: inherit;
-    //text-decoration: underline;
-}
-
-.term a:hover {
-    color: $link;
+    a {
+        color: inherit;
+        //text-decoration: underline;
+    }
+    a:hover {
+        color: $link;
+    }
 }
 
 .term-text {
@@ -171,7 +165,7 @@ code.has-jax.display{
 }
 
 code.has-jax mjx-container {
-    overflow: auto;
+        overflow: auto;
 }
 
 span.math-center code.has-jax.display mjx-container {
