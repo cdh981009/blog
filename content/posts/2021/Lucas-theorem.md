@@ -50,7 +50,13 @@ p가 소수이고 n이 `$1 \le n \le p - 1$`인 정수일 때, 이항 계수 (p,
 
 #### step 2
 
-이제 음수가 아닌 정수 m과 소수 p가 있다고 하자. 이때 m을 다음과 같이 표현할 수 있다.
+결론부터 말하자면 다음을 보일 것이다.
+
+`$$
+\sum_{n=0}^m {\binom m n}X^n \equiv \sum_{n=0}^m \left(\prod_{i=0}^k \binom {m_i} {n_i}\right) X^n \pmod p
+$$`
+
+음수가 아닌 정수 m과 소수 p가 있다고 하자. 이때 m을 다음과 같이 표현할 수 있다.
 
 `$$m = \sum_{i=0}^k m_i p^i \hspace2ex {(0 \le m_i \le p-1)}$$`
 
