@@ -158,14 +158,16 @@ code.has-jax {
     border: inherit;
     color: inherit;
     padding: 0.2rem;
+    mjx-container {
+        padding-top: 0.2em;
+        margin-top: 0.8em !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
 }
 
 code.has-jax.display{
     padding: 0;
-}
-
-code.has-jax mjx-container {
-        overflow: auto;
 }
 
 span.math-center code.has-jax.display mjx-container {
