@@ -4,7 +4,7 @@ date: 2021-02-11T22:36:43+09:00
 description: "뤼카의 정리(Lucas' theorem)에 대한 설명과 증명"
 categories:
     - Algorithm
-tags:q
+tags:
     - 정수론
     - Problem solving
 titlemath: "$$\\binom m n \\equiv \\prod_{i=0}^k \\binom {m_i} {n_i} \\pmod p $$"
