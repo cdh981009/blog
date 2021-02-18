@@ -45,7 +45,7 @@
         </div>
         {{ end }}
         {{ if .Params.tags }}
-        <div class="post-tags columns is-flex-wrap-wrap is-multiline is-mobile is-justify-content-flex-end pt-3">
+        <div class="post-tags columns is-flex-wrap-wrap is-multiline is-mobile is-justify-content-flex-end {{ if not $simple }}pt-3{{ else }}pt-4{{ end }}">
             {{ range .Params.tags }}
             <span class="post-tag column is-narrow has-text-grey p-0">
                 <a class="" href="/tags/{{ . | urlize}}">{{ print "#" . }}</a>
