@@ -7,97 +7,65 @@ categories:
 tags:
     - 정수론
     - Problem solving
-titlemath: "$$\\binom m n \\equiv \\prod_{i=0}^k \\binom {m_i} {n_i} \\pmod p $$"
+titlemath: "$$\\phi(n) = \\sum p_i^{a_i - 1} (p_i - 1)$$"
 draft: true
 ---
 
-오일러 피(파이) 함수 `$\phi(n)$`는 1부터 n까지 정수 중 n과 서로소의 갯수를 세는 함수이다.
+오일러 피(파이) 함수 `$\phi(n)$`는 1부터 `$n$`까지 정수 중 `$n$`과 서로소인 수의 갯수를 세는 함수이다.
 
 <!--more-->
 
 ## 공식
 
-양의 정수 n에 대해 오일러 피 함수는 다음과 같이 정의된다.
+양의 정수 `$n$`에 대해 오일러 피 함수는 다음과 같이 정의된다.
 
-`$$\phi(n) = \sum^{} p_i^{a_i - 1} (p - 1)$$`
+`$$\phi(n) = \sum p_i^{a_i - 1} (p_i - 1)$$`
 
-이때 m과 n은 각각 다음과 같다.
-
-`$$m = m_k p^k + m_{k-1}p^{k-1} + \cdots + m_1 p + m_0$$`
-
-`$$n = n_k p^k + n_{k-1}p^{k-1} + \cdots + n_1 p + n_0$$`
-
-## 사용
-
-아주 큰 숫자 m, n에 대해 이항 계수 `$\binom m n$`을 구해야 하나 정확한 값을 알 필요는 없고 적당히 작은 소수 p로 나눈 나머지만 알면 될 때 사용할 수 있다.
+이때 각 `$p_i$`는 `$n$`의 소인수이고 `$a_i$`는 `$p_i$`의 차수이다. 즉 `$n$`을 소인수분해 하면 `$\prod p_i^{a_i}$`이다.
 
 ## 증명
 
 #### step 1
 
-p가 소수이고 n이 `$1 \le n \le p - 1$`인 정수일 때, 이항 계수 (p, n)은 다음과 같다.
+`$n$`이 소수 `$p$`에 대해 `$n = p^k$`인 경우(소수의 `$k$`제곱수인 경우) `$\phi(n) = p^{k - 1} (p - 1)$`임을 증명한다.
 
-`$$\binom p n = {{p \cdot (p - 1) \cdots (p - n - 1)} \over {n \cdot (n - 1) \cdots 1}} $$`
+1 이상 `$p^k$` 이하 정수이면서 `$p^k$`와 서로소가 **아니려면** 소인수로 `$p$`를 가지면 된다. 
 
-이 식의 분모는 p로 나누어 떨어지지 않고(`$\because n \le p - 1$`, p는 소수) 분자는 p로 나누어 떨어진다.
+따라서 `$p$`의 배수이면 되므로 이런 수는 `$p, 2p, 3p \space \cdots \space p^{k-1}p$`, 총 `$p^{k-1}$`개 이다.
 
-따라서 `$p \mid \binom p n$`이고 이를 통해 다음 식을 얻을 수 있다.
-
-`$$(1 + X)^p \equiv 1 + X^p \pmod p$$`
-
-위 식의 양 변에 p제곱을 하는 귀납법을 통해 모든 음수가 아닌 i에 대해 다음이 성립한다.
-
-`$$(1 + X)^{p^i} \equiv 1 + X^{p^i} \pmod p$$`
+`$$\therefore \phi(n) = p^k - p^{k - 1} = p^{k-1} (p - 1)$$`
 
 #### step 2
 
-결론부터 말하자면 다음을 보일 것이다.
+오일러 피 함수가 곱셈적 함수(multiplicative function)임을 증명한다. 즉 `$m$`과 `$n$`이 서로소일 경우, `$\phi(mn) = \phi(m) \phi(n)$`임을 보인다.
+
+먼저 1부터 `$mn$`까지 숫자를 나열하는 `$m * n$` 테이블을 그리고 여기서 `$mn$`과 서로소인 숫자가 몇 개인지 세어보자.
 
 `$$
-\sum_{n=0}^m {\binom m n}X^n \equiv \sum_{n=0}^m \left(\prod_{i=0}^k \binom {m_i} {n_i}\right) X^n \pmod p
+\begin{matrix}
+1 & m + 1 & 2m + 1 & \cdots & (n-1)m + 1 \cr
+2 & m + 2 & 2m + 2 & \cdots & (n-1)m + 2 \cr
+3 & m + 3 & 2m + 3 & \cdots & (n-1)m + 3 \cr
+\vdots & \vdots & \vdots & & \vdots \cr
+m & 2m & 3m & \cdots & nm
+\end{matrix}
 $$`
 
-음수가 아닌 정수 m과 소수 p가 있다고 하자. 이때 m을 다음과 같이 표현할 수 있다.
+이 테이블에서 `$r \text {-th row}$`의 값들은 `$km + r$`의 꼴이다. (`$0 \le k \le n - 1$`)
 
-`$$m = \sum_{i=0}^k m_i p^i \hspace2ex {(0 \le m_i \le p-1)}$$`
+`$d = gcd(m, r)$`이라고 할 때 `$d \gt 1$`이면(`$m$`과 `$r$`이 서로소가 아니면) `$d \mid m$`이고 `$d \mid r$`이므로 `$d \mid km + r$`이고 `$d \mid mn$`이다. 즉 `$km + r$`과 `$mn$`은 공약수 `$d$`를 가진다.
 
-step 1의 결과를 이용하면
+따라서 `$m$`과 서로소가 **아닌** `$r$`에 대해 `$r \text {-th row}$`의 `$n$`개 값들은 **모두** `$mn$`과 서로소가 아니다. 
 
-`$$
-\eqalign {
-\sum_{n=0}^m {\binom m n}X^n &= (1 + X)^m \\
-    &= \prod_{i=0}^k\left((1 + X)^{p^i}\right)^{m_i} \\
-    &\equiv \prod_{i=0}^k(1 + X^{p^i})^{m_i} \\
-    &= (1+X^{p^0})^{m_0} (1+X^{p^1})^{m_1} \cdots (1+X^{p^k})^{m_k}
-}
-$$`
+그러므로 `$mn$`과 서로소일 수도 있는 값들은 `$m$`과 서로소인 `$r$`에 대해 `$r \text {-th row}$`에 있다. 그리고 그런 `$\text{row}$`는 `$\phi(m)$`개 있음을 알고있다.
 
-위 식에서 어떤 n에 대해 `$X^n$`의 계수를 구하고 싶다. 이때 n역시 다음과 같이 표현할 수 있다.
+이제 그런 `$\text{row}$`마다 `$mn$`과 서로소인 값은 정확히 `$\phi(n)$`개 있음을 보이면 된다.
 
-`$$n = \sum_{i=0}^k n_i p^i \hspace2ex {(0 \le n_i \le p-1)}$$`
+n개 값들 중 서로소인 `$r$`은  `$\phi(m)$`개 있다.
 
-따라서 `$X^n$`를 만들기 위해선 각 `$X^{p^i}$`가 `$n_i$`번 곱해진 후 전체가 모두 곱해져야 한다.
 
-`$(1 + X^{p^i})^{m_i}$`에서 `$X^{p^i n_i}$`의 계수는 `$\binom {m_i} {n_i}$`이므로 `$X^n$`의 계수는 `$\prod_{i=0}^k \binom {m_i} {n_i}$`이다.
+#### step 3
 
-그러므로
-
-`$$
-\eqalign {
-\prod_{i=0}^k(1 + X^{p^i})^{m_i}
-    &= (1+X^{p^0})^{m_0} (1+X^{p^1})^{m_1} \cdots (1+X^{p^k})^{m_k} \\
-    &= \sum_{n=0}^m \left(\prod_{i=0}^k \binom {m_i} {n_i}\right) X^n
-}
-$$`
-
-정리하면 다음 식을 얻는다.
-
-`$$
-\sum_{n=0}^m {\binom m n}X^n \equiv \sum_{n=0}^m \left(\prod_{i=0}^k \binom {m_i} {n_i}\right) X^n \pmod p
-$$`
-
-임의의 `$n \space (1 \le n \le m)$`에 대해 양 변의 `$X^n$`의 계수가 합동이므로 결론적으로 우리가 원하는 합동식을 얻을 수 있다.
-
-`$$ \therefore \binom m n \equiv \prod_{i=0}^k \binom {m_i} {n_i} \pmod p $$`
+1보다 큰 양의 정수 n은 소수의 k제곱수들의 곱이므로 step 1, step 2의 결과에 의해 오일러 피 함수의 정당성을 증명하였다.
 
 **출처**: [Loyola University Chicago 수업자료](http://gauss.math.luc.edu/greicius/Math201/Fall2012/Lectures/euler-phi.article.pdf)
