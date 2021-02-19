@@ -32,7 +32,7 @@ titlemath: "$$\\binom m n \\equiv \\prod_{i=0}^k \\binom {m_i} {n_i} \\pmod p $$
 
 ## 증명
 
-#### step 1
+#### step 1.
 
 `$p$`가 소수이고 `$n$`이 `$1 \le n \le p - 1$`인 정수일 때, 이항 계수 `$\binom p n$`은 다음과 같다.
 
@@ -46,7 +46,7 @@ titlemath: "$$\\binom m n \\equiv \\prod_{i=0}^k \\binom {m_i} {n_i} \\pmod p $$
 
 `$$(1 + X)^{p^i} \equiv 1 + X^{p^i} \pmod p$$`
 
-#### step 2
+#### step 2.
 
 결론부터 말하자면 다음을 보일 것이다.
 
