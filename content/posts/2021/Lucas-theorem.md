@@ -38,9 +38,7 @@ titlemath: "$$\\binom m n \\equiv \\prod_{i=0}^k \\binom {m_i} {n_i} \\pmod p $$
 
 `$$\binom p n = {{p \cdot (p - 1) \cdots (p - n - 1)} \over {n \cdot (n - 1) \cdots 1}} $$`
 
-이 식의 분모는 `$p$`로 나누어 떨어지지 않고(`$\because n \le p - 1$`, `$p$`는 소수) 분자는 `$p$`로 나누어 떨어진다.
-
-따라서 `$p \mid \binom p n$`이고 이를 통해 다음 식을 얻을 수 있다.
+이 식의 분모는 `$p$`로 나누어 떨어지지 않고(`$\because n \le p - 1$`, `$p$`는 소수) 분자는 `$p$`로 나누어 떨어진다. 따라서 `$p \mid \binom p n$`이고 이를 통해 다음 식을 얻을 수 있다.
 
 `$$(1 + X)^p \equiv 1 + X^p \pmod p$$`
 
