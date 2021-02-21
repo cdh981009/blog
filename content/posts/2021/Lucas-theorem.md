@@ -97,4 +97,5 @@ $$`
 
 `$$ \therefore \binom m n \equiv \prod_{i=0}^k \binom {m_i} {n_i} \pmod p $$`
 
+<br/><br/>
 **출처**: [위키백과](https://en.wikipedia.org/wiki/Lucas%27s_theorem)

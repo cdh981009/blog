@@ -68,4 +68,5 @@ $$`
 
 `$n = 1$`인 경우는 자명하고, `$1$`보다 큰 양의 정수 `$n$`은 소수의 `$k$`제곱수들의 곱이므로, **Lemma 1, 2**의 결과에 따라 오일러 피 함수의 정당성을 증명하였다.
 
+<br/><br/>
 **출처**: [Loyola University Chicago 수업자료](http://gauss.math.luc.edu/greicius/Math201/Fall2012/Lectures/euler-phi.article.pdf)
