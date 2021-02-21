@@ -43,6 +43,10 @@ main {
     }
 }
 
+.navbar {
+    width: 100%;
+}
+
 $width-sizes: 400px, 500px, 600px, 700px, 800px;
 
 @each $size in $width-sizes {
@@ -172,12 +176,6 @@ code.has-jax {
     }
 }
 
-.content table {
-    overflow-x: auto;
-    max-width: fit-content;
-    display: block;
-}
-
 code.has-jax.display{
     padding: 0;
 }
@@ -192,4 +190,8 @@ code.has-jax.display mjx-container {
     @include mobile {
         padding-left: 0;
     }
+}
+
+.single-content {
+    overflow-x: hidden;
 }
