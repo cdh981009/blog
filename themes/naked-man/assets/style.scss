@@ -15,6 +15,12 @@ $footer-padding: 3rem 1.5rem 4rem;
 
 @import "bulma/bulma.sass";
 
+.gist {
+    .content table td, .content table th {
+        border: inherit;
+    }
+}
+
 .logo h1 {
     font-size: 1.5rem;
     font-weight: 900;
