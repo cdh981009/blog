@@ -173,7 +173,9 @@ code.has-jax {
 }
 
 .content table {
-    width: fit-content;
+    overflow-x: auto;
+    max-width: fit-content;
+    display: block;
 }
 
 code.has-jax.display{
