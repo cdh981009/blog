@@ -5,7 +5,7 @@ description: "문자열 알고리즘중 하나인 Z 알고리즘에 대한 설�
 categories:
     - Algorithm
 tags:
-    - 문자열 알고리즘
+    - 문자열
     - Problem solving
 ---
 
