@@ -168,16 +168,16 @@ code.has-jax {
     border: inherit;
     color: inherit;
     padding: 0.2rem;
-    mjx-container {
-        padding-top: 0.2em;
-        margin-top: 0.8em !important;
-        overflow-x: auto;
-        overflow-y: hidden;
-    }
 }
 
 code.has-jax.display{
     padding: 0;
+    mjx-container {
+        padding-top: 0.3em;
+        margin-top: 0.7em !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
 }
 
 span.math-center code.has-jax.display mjx-container {
@@ -193,5 +193,9 @@ code.has-jax.display mjx-container {
 }
 
 .single-content {
-    overflow-x: hidden;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow-x: auto;
 }
