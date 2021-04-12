@@ -199,3 +199,8 @@ code.has-jax.display mjx-container {
     padding-right: 1rem;
     overflow-x: auto;
 }
+
+img[src*='#center'] {
+    display: block;
+    margin: auto;
+}
