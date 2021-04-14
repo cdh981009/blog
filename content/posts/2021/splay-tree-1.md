@@ -43,7 +43,7 @@ Splay는 Splay tree의 기본이 되는 연산으로, 쿼리에 의해 접근한
 
 2. **검색:** 마찬가지로 일반적인 BST에서 하듯이 노드를 찾은 후 그 노드를 splay한다.
 
-3. **삭제:** 삭제할 노드를 검색한다. 삭제할 노드가 새 root이므로 root를 삭제하면 root의 양쪽 subtree가 분리되므로 이를 연결해야 한다. Left subtree의 가장 큰 원소(rightmost element)를 x라고 하자. Right subtree를 x의 right child로 만들고 x를 splay하면 두 subtree를 연결할 수 있다.
+3. **삭제:** 삭제할 노드를 검색한다. 삭제할 노드가 새 루트이므로 루트를 삭제하면 루트의 양쪽 subtree가 분리되므로 이를 연결해야 한다. Left subtree의 가장 큰 원소(rightmost element)를 x라고 하자. Right subtree를 x의 right child로 만들고 x를 splay하면 두 subtree를 연결할 수 있다.
 
 ## 응용 연산
 
