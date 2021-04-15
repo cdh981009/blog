@@ -258,3 +258,4 @@ void reverse(int l, int r) {
 - Lecture 05, 09/16: Integer Shortest Paths (초반부) [(링크)](https://www.youtube.com/watch?v=rn3xjYpJWi0)
 - MIT Open Course Ware - Advanced Data Structures - 5. Dynamic Optimality I [(링크)](https://www.youtube.com/watch?v=DZ7jt1F8KKw)
 - cubelover의 블로그 [(링크)](https://cubelover.tistory.com/10)
+- 위키피디아 Amortized analysis 항목 [(링크)](https://en.wikipedia.org/wiki/Amortized_analysis)
