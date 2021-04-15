@@ -39,7 +39,7 @@ Splay는 Splay tree의 기본이 되는 연산으로, 쿼리에 의해 접근한
 
 접근한 원소를 splay한다는 차이점을 제외하면 일반적인 BST와 유사하다.
 
-1. **삽입:** 일반적인 BST처럼 root에서 시작해 내려가다 알맞은 위치에 새 노드를 삽입한다. 그리고 새로 삽입한 노드를 splay한다.
+1. **삽입:** 일반적인 BST처럼 루트에서 시작해 내려가다 알맞은 위치에 새 노드를 삽입한다. 그리고 새로 삽입한 노드를 splay한다.
 
 2. **검색:** 마찬가지로 일반적인 BST에서 하듯이 노드를 찾은 후 그 노드를 splay한다.
 
@@ -51,9 +51,9 @@ Splay는 Splay tree의 기본이 되는 연산으로, 쿼리에 의해 접근한
 
 k번째 원소(노드)를 검색하기 위해선 각 노드가 자신의 subtree의 size 정보를 관리하도록 해야 한다. Splay 연산에서 rotation을 할 때 child가 바뀌므로 이런 노드에 대해 rotate후 subtree size를 다시 계산해준다. 삽입이나 삭제 연산같이 어떤 노드에 새로운 child를 추가하는 경우를 생각해보자. 해당하는 child가 splay되어 루트로 올라가므로 splay의 rotation 연산에서 업데이트를 처리하면 루트까지 이어지는 path에 있는 모든 노드의 subtree size가 알맞게 업데이트 될 것이다.
 
-각 노드가 subtree size를 알고 있다면, k번째 원소를 찾는 것을 검색 연산과 비슷하게 구현할 수 있다. 편의성을 위해 k를 0-base로 하자. 루트에서 시작해 left child의 subtree size를 본다. 이 값을 x라고 할 때,
+각 노드가 subtree size를 알고 있다면, k번째 원소를 찾는 것을 검색 연산과 비슷하게 구현할 수 있다. 편의성을 위해 k를 0-base로 하자. 루트에서 시작해 현재 노드의 left child의 subtree size를 본다. 이 값을 x라고 할 때,
 
-1. x가 k와 같으면 root보다 작은 원소가 k개 있다는 뜻이므로 root가 내가 찾는 원소이다.
+1. x가 k와 같으면 현재 노드보다 작은 원소가 k개 있다는 뜻이므로 현재 노드가 내가 찾는 원소이다.
 2. x가 k보다 크다면 k번째 원소는 left subtree에 속해 있으므로 left child로 이동한 후 반복한다.
 3. x가 k보다 작다면 k번째 원소는 right subtree에 속한 원소 중 k - x - 1번째 원소이므로 k -= x + 1 한 후 right subtree로 이동한 후 반복한다.
 
