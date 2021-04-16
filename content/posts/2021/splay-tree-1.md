@@ -12,7 +12,7 @@ images:
     - /images/blog/2021/04/zig-zag-thumb.PNG
 ---
 
-BST(Binary Search Tree)의 한 종류인 Splay tree는, Splay라는 rotation 기반의 간단한 연산을 통해 쿼리를 할 때마다 Self Balancing을 수행한다. Splay tree는 다른 Balanced Binary Search Tree보다 구현이 (알고리즘 대회에서 구현 할 수 있을 만큼) 간단하고, 다양한 종류의 쿼리를 `$amortized \space O(log \space n)$`시간에 수행 할 수 있다.
+BST(Binary Search Tree)의 한 종류인 Splay tree는, Splay라는 rotation 기반의 간단한 연산을 통해 쿼리를 할 때마다 Self Balancing을 수행한다. Splay tree는 다른 Balanced Binary Search Tree보다 구현이 (알고리즘 대회에서 구현 할 수 있을 만큼) 간단하고, 다양한 종류의 쿼리를 `$amortized \space O(\log n)$`시간에 수행 할 수 있다.
 
 <!--more-->
 
@@ -33,7 +33,7 @@ Splay는 Splay tree의 기본이 되는 연산으로, 쿼리에 의해 접근한
 
 트리의 구조에 따라 zig, zig-zig, zig-zag 중 하나를 수행한 후, x가 루트가 아니라면 다시 반복한다. 따라서 splay가 끝나면 x는 트리의 새 루트가 된다. 당연하지만 일반적인 BST에서 처럼 rotate후에도 노드들의 정렬(inorder 순서)이 유지된다.
 
-앞으로 설명할 splay tree의 모든 연산은 splay를 사용한다. Splay를 통해 트리가 self balancing하기 때문에, 초기 트리가 degenerate하더라도 충분히 많은 쿼리를 수행하면 모든 쿼리가 `$amortized \space O(log \space n)$`시간에 동작한다.
+앞으로 설명할 splay tree의 모든 연산은 splay를 사용한다. Splay를 통해 트리가 self balancing하기 때문에, 초기 트리가 degenerate하더라도 충분히 많은 쿼리를 수행하면 모든 쿼리가 `$amortized \space O(\log n)$`시간에 동작한다.
 
 ## 기본 연산 (삽입, 검색, 삭제)
 
@@ -73,13 +73,13 @@ Splay tree로 수열을 표현해 수열에 range query를 빠르게 처리 할 
 
 하나의 원솟값만 바꾸면 되는 point update의 경우 그 원소를 찾아 splay해 루트로 만든 후 원솟값을 바꿔주면 된다.
 
-연속된 구간의 값을 바꾸는 range update를 `$amortized \space O(log \space n)$`시간에 수행해야 할 경우 lazy propagation을 사용해야 한다. 이를 위해 노드가 lazy 값을 관리한다. Range update를 하기 위해선 먼저 위에서 설명한 방법으로 `$[l, \space r]$` 구간의 노드들을 한 subtree에 모은 후 subtree의 루트의 lazy 값을 업데이트해 주면 된다.
+연속된 구간의 값을 바꾸는 range update를 `$amortized \space O(\log n)$`시간에 수행해야 할 경우 lazy propagation을 사용해야 한다. 이를 위해 노드가 lazy 값을 관리한다. Range update를 하기 위해선 먼저 위에서 설명한 방법으로 `$[l, \space r]$` 구간의 노드들을 한 subtree에 모은 후 subtree의 루트의 lazy 값을 업데이트해 주면 된다.
 
 어떤 노드의 lazy가 default 값이 아니라는 것은 그 노드의 현재 subtree에 이 lazy 값이 언젠가는 업데이트되어야 한다는 뜻이다. 따라서 subtree가 바뀌기 직전, 혹은 자식의 정보를 당장 사용해야 할 때 자식에게 lazy 값을 전파해주면 된다. 구현하는 range update의 종류에 따라 루트에서 시작해 자식 노드로 내려갈 때 lazy 값을 전파하는 것으로 충분할 수도 있고, 트리 중간의 어떤 노드가 splay를 통해 루트로 올라갈 때 lazy 값을 전파하는 것으로 충분할 수도 있다. 혹은 두 경우 모두 lazy 값을 전파해야 트리가 올바르게 동작할 수도 있다.
 
 #### 4. 수열의 구간 뒤집기, 수열의 구간 shifting
 
-Lazy propagation을 사용하면 수열의 구간을 뒤집는 연산도 `$amortized \space O(log \space n)$`시간에 가능하다. 먼저 각 노드가 lazy 값의 한 종류로 boolean 타입의 reverse 값을 관리해야 한다.
+Lazy propagation을 사용하면 수열의 구간을 뒤집는 연산도 `$amortized \space O(\log n)$`시간에 가능하다. 먼저 각 노드가 lazy 값의 한 종류로 boolean 타입의 reverse 값을 관리해야 한다.
 
 수열의 `$[l, \space r]$` 구간을 `$[r, \space l]$`로 뒤집는 것을 다음과 같이 생각할 수 있다. 구간 사이에 있는 임의의 index를 골라 `$x$`라고 하자. 그러면 구간을 세 구간 `$[l, \space x - 1]$`, `$[x]$`, `$[x + 1, \space r]$`로 쪼갤 수 있다. `$[x]$`를 기준으로 양 옆 두 구간을 맞바꾸면 구간은 `$[x + 1, \space r]$`, `$[x]$`, `$[l, \space x - 1]$`이 된다. 재귀적으로 `$[x + 1, \space r]$`, `$[l, \space x - 1]$`를 뒤집으면, 구간이 `$[r, \space x + 1]$`, `$[x]$`, `$[x - 1, \space l]$`이 된다. 따라서 수열의 `$[l, \space r]$` 구간을 `$[r, \space l]$`로 뒤집었다.
 
