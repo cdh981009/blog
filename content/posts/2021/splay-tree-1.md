@@ -252,10 +252,10 @@ void reverse(int l, int r) {
 
 <br/><br/>
 **출처**
-- Sleator, Daniel D.; Tarjan, Robert E. (1985). "Self-Adjusting Binary Search Trees" [(링크)](https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf)
-- Notes on Amortization [(링크)](https://www.cs.cmu.edu/afs/cs/academic/class/15451-s06/www/lectures/amortize.pdf)
+
+- cubelover의 블로그 [(링크)](https://cubelover.tistory.com/10)
 - Lecture 04, 09/13: Splay Trees [(링크)](https://www.youtube.com/watch?v=QnPl_Y6EqMo)
 - Lecture 05, 09/16: Integer Shortest Paths (초반부) [(링크)](https://www.youtube.com/watch?v=rn3xjYpJWi0)
 - MIT Open Course Ware - Advanced Data Structures - 5. Dynamic Optimality I [(링크)](https://www.youtube.com/watch?v=DZ7jt1F8KKw)
-- cubelover의 블로그 [(링크)](https://cubelover.tistory.com/10)
-- 위키피디아 Amortized analysis 항목 [(링크)](https://en.wikipedia.org/wiki/Amortized_analysis)
+- Sleator, Daniel D.; Tarjan, Robert E. (1985).  "Self-Adjusting Binary Search Trees" [(링크)](https://www.cs.cmu.edu/~sleator/papers/self-adjusting.pdf)
+
