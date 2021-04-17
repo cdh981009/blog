@@ -31,7 +31,7 @@ Splay는 Splay tree의 기본이 되는 연산으로, 쿼리에 의해 접근한
 3. **zig-zag step:** x가 left child고 parent가 right child거나 그 반대의 경우 rotate(x)를 두 번 한다.
 ![zig-zag-step](/images/blog/2021/04/zig-zag.PNG)
 
-트리의 구조에 따라 zig, zig-zig, zig-zag 중 하나를 수행한 후, x가 루트가 아니라면 다시 반복한다. 따라서 splay가 끝나면 x는 트리의 새 루트가 된다. 당연하지만 일반적인 BST에서 처럼 rotate후에도 노드들의 정렬(inorder 순서)이 유지된다.
+트리의 구조에 따라 zig, zig-zig, zig-zag 중 하나를 수행한 후, x가 루트가 아니라면 다시 반복한다. 따라서 splay가 끝나면 x는 트리의 새 루트가 된다. 당연하지만 일반적인 BST에서처럼 rotate후에도 노드들의 정렬(inorder 순서)이 유지된다.
 
 앞으로 설명할 splay tree의 모든 연산은 splay를 사용한다. Splay를 통해 트리가 self balancing하기 때문에, 초기 트리가 degenerate하더라도 충분히 많은 쿼리를 수행하면 모든 쿼리가 `$amortized \space O(\log n)$`시간에 동작한다.
 
@@ -49,7 +49,7 @@ Splay는 Splay tree의 기본이 되는 연산으로, 쿼리에 의해 접근한
 
 #### 1. k번째 원소 찾기
 
-k번째 원소(노드)를 검색하기 위해선 각 노드가 자신의 subtree의 size 정보를 관리하도록 해야 한다. Splay 연산에서 rotation을 할 때 child가 바뀌므로 이런 노드에 대해 rotate후 subtree size를 다시 계산해준다. 삽입이나 삭제 연산같이 어떤 노드에 새로운 child를 추가하는 경우를 생각해보자. 해당하는 child가 splay되어 루트로 올라가므로 splay의 rotation 연산에서 업데이트를 처리하면 루트까지 이어지는 path에 있는 모든 노드의 subtree size가 알맞게 업데이트 될 것이다.
+k번째 원소(노드)를 검색하기 위해선 각 노드가 자신의 subtree의 size 정보를 관리하도록 해야 한다. Splay 연산에서 rotation을 할 때 child가 바뀌므로 이런 노드에 대해 rotate후 subtree size를 다시 계산해준다. 삽입이나 삭제 연산같이 어떤 노드에 새로운 child를 추가하는 경우를 생각해보자. 해당하는 child가 splay되어 루트로 올라가므로 splay의 rotation 연산에서 업데이트를 처리하면 루트까지 이어지는 path에 있는 모든 노드의 subtree size가 알맞게 업데이트될 것이다.
 
 각 노드가 subtree size를 알고 있다면, k번째 원소를 찾는 것을 검색 연산과 비슷하게 구현할 수 있다. 편의성을 위해 k를 0-base로 하자. 루트에서 시작해 현재 노드의 left child의 subtree size를 본다. 이 값을 x라고 할 때,
 
@@ -61,7 +61,7 @@ k번째 원소를 찾으면 그 원소를 splay한다.
 
 #### 2. 수열의 구간에서 max(혹은 min, sum 등)값 찾기
 
-Splay tree로 수열을 표현해 수열에 range query를 빠르게 처리 할 수 있다. BST의 정렬을 노드의 item(수열의 원솟값)으로 하는게 아니라 수열의 index로 한다는 점이 중요하다. 위에서 설명한 k번째 원소를 찾는 기능과 더불어, 각 노드가 subtree의 max 값도 관리하도록 해야한다. 이제 subtree size를 업데이트 할 때 subtree의 max 값도 업데이트한다.
+Splay tree로 수열을 표현해 수열에 range query를 빠르게 처리 할 수 있다. BST의 정렬을 노드의 item(수열의 원솟값)으로 하는 게 아니라 수열의 index로 한다는 점이 중요하다. 위에서 설명한 k번째 원소를 찾는 기능과 더불어, 각 노드가 subtree의 max 값도 관리하도록 해야 한다. 이제 subtree size를 업데이트할 때 subtree의 max 값도 업데이트한다.
 
 `$[l, \space r]$` 구간에서 max 값을 구하려면, 먼저 `$l - 1$`번째 원소를 찾는 쿼리를 한다. 이제 `$l - 1$`번째 원소가 splay되었으므로 새 루트이다. 루트의 right subtree에는 `$[l, \space n - 1]$`구간의 원소들이 모여있다. 잠시 루트에서 right child와의 연결을 끊고 right subtree를 독립된 트리로 취급하자. 이 트리에서 `$r - l + 1$`번째 원소를 찾는 쿼리를 하면 전체 수열에서 `$r + 1$`번째 원소가 splay된다. 이 `$r + 1$`번째 원소는 right subtree의 루트, 즉 새로운 right child가 된다(연결을 끊은 것은 이 쿼리 이후 다시 연결한다). 이 right child의 left subtree는 이제 `$[l, \space r]$` 구간의 원소들이 모여있다. 따라서 루트의 right child의 left child의 max값이 `$[l, \space r]$`의 max 값이 된다.
 
@@ -81,7 +81,7 @@ Splay tree로 수열을 표현해 수열에 range query를 빠르게 처리 할 
 
 Lazy propagation을 사용하면 수열의 구간을 뒤집는 연산도 `$amortized \space O(\log n)$`시간에 가능하다. 먼저 각 노드가 lazy 값의 한 종류로 boolean 타입의 reverse 값을 관리해야 한다.
 
-수열의 `$[l, \space r]$` 구간을 `$[r, \space l]$`로 뒤집는 것을 다음과 같이 생각할 수 있다. 구간 사이에 있는 임의의 index를 골라 `$x$`라고 하자. 그러면 구간을 세 구간 `$[l, \space x - 1]$`, `$[x]$`, `$[x + 1, \space r]$`로 쪼갤 수 있다. `$[x]$`를 기준으로 양 옆 두 구간을 맞바꾸면 구간은 `$[x + 1, \space r]$`, `$[x]$`, `$[l, \space x - 1]$`이 된다. 재귀적으로 `$[x + 1, \space r]$`, `$[l, \space x - 1]$`를 뒤집으면, 구간이 `$[r, \space x + 1]$`, `$[x]$`, `$[x - 1, \space l]$`이 된다. 따라서 수열의 `$[l, \space r]$` 구간을 `$[r, \space l]$`로 뒤집었다.
+수열의 `$[l, \space r]$` 구간을 `$[r, \space l]$`로 뒤집는 것을 다음과 같이 생각할 수 있다. 구간 사이에 있는 임의의 index를 골라 `$x$`라고 하자. 그러면 구간을 세 구간 `$[l, \space x - 1]$`, `$[x]$`, `$[x + 1, \space r]$`로 쪼갤 수 있다. `$[x]$`를 기준으로 양옆 두 구간을 맞바꾸면 구간은 `$[x + 1, \space r]$`, `$[x]$`, `$[l, \space x - 1]$`이 된다. 재귀적으로 `$[x + 1, \space r]$`, `$[l, \space x - 1]$`를 뒤집으면, 구간이 `$[r, \space x + 1]$`, `$[x]$`, `$[x - 1, \space l]$`이 된다. 따라서 수열의 `$[l, \space r]$` 구간을 `$[r, \space l]$`로 뒤집었다.
 
 따라서 구간을 뒤집는 연산은 `$[l, \space r]$` 구간의 노드들을 한 subtree에 모은 후 subtree의 루트의 reverse 값을 업데이트하는 것으로 구현할 수 있다. 이후 lazy propagation을 할 때 reverse가 참일 경우 left child와 right child를 맞바꾸고 자식들의 reverse 값도 업데이트해 주면 된다. 여기서 reverse 값을 업데이트한다는 것은 이전 reverse 값을 반전시킨다는 뜻이다.
 
@@ -91,9 +91,9 @@ Lazy propagation을 하는 타이밍에 유의할 점이 있다. 검색이나 k�
 
 ## Splay 구현 코드
 
-Splay tree의 구현은 개념적으로는 어렵지 않지만 부모 자식 노드 간 연결을 잇거나 끊는 부분과 lazy 값을 전파하는 부분에서 실수를 하지 않도록 신경 써주어야 한다.
+Splay tree의 구현은 개념적으로는 어렵지 않지만, 부모 자식 노드 간 연결을 잇거나 끊는 부분과 lazy 값을 전파하는 부분에서 실수하지 않도록 신경 써주어야 한다.
 
-다음 코드는 [백준 13159번 문제: 배열](https://www.acmicpc.net/problem/13159)을 풀기위해 구현한 splay tree이다. 문제에서 요구하지 않아 삽입/삭제 연산은 구현하지 않았지만 원리를 이해한다면 직접 구현하기 어렵지 않을것이다.
+다음 코드는 [백준 13159번 문제: 배열](https://www.acmicpc.net/problem/13159)을 풀기 위해 구현한 splay tree이다. 문제에서 요구하지 않아 삽입/삭제 연산은 구현하지 않았지만, 원리를 이해한다면 직접 구현하기 어렵지 않을 것이다.
 
 ``` splay_tree.cpp
 constexpr int N = 3e5;
