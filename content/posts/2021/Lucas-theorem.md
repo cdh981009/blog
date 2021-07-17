@@ -30,6 +30,8 @@ titlemath: "$$\\binom m n \\equiv \\prod_{i=0}^k \\binom {m_i} {n_i} \\pmod p $$
 
 아주 큰 숫자 `$m, n$`에 대해 이항 계수 `$\binom m n$`을 구해야 하나 정확한 값을 알 필요는 없고 적당히 작은 소수 `$p$`로 나눈 나머지만 알면 될 때 사용할 수 있다.
 
+* 연습문제: [백준 11402](https://www.acmicpc.net/problem/11402)
+
 ## 증명
 
 #### step 1.
