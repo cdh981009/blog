@@ -1,0 +1,7 @@
+오랜만에 블로그 글을 작성할 때 유의해야 할 점들..
+
+hugo server -D --disableFastRender
+로컬서버 돌려서 미리 확인하기 (-D는 draft를 보는 flag)
+
+hugo new post/my-first-post.md
+글 새로 생성하기
